@@ -19,7 +19,7 @@ of the need to process subnet ranges in 32 bit decimal word form.
   
 Whats New in 2.2?
 -----------------
-- Calculate Subnet,Usaable IP Hosts, and Broacast IPV4 address for single or multiple ranges.
+- Calculate Network Subnets,Usaable IP Hosts, and Broacast IPV4 address for single or multiple ranges.
 
 ------------------------
 
