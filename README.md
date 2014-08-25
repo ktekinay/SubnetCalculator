@@ -13,8 +13,8 @@ Version:        2.2
 
 What is this Project?
 
-This project is an open source demo Xojo project to showcase the Subnet Calculator classes. This project was born out of 
-the need to process subnets in 32 bit decimal word form.
+This project is an open source demo Xojo project to showcase the Subnet Calculator classes. This project was created out 
+of the need to process subnet ranges in 32 bit decimal word form.
   
   
 Whats New in 2.2?
