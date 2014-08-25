@@ -26,7 +26,8 @@ Whats New in 2.2?
 
 How to Use this Project?
 
-Please read our full "How To" documentation located at (COMING SOON)
+Please read our full "How To" documentation located at:
+- COMING SOON!
 
 
 
