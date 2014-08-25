@@ -1,0 +1,4 @@
+#tag Toolbar
+Begin Toolbar MainWindow_ToolBar
+End
+#tag EndToolbar

@@ -1,0 +1,1484 @@
+#tag Window
+Begin Window TinyViewWindow
+   BackColor       =   &cFFFFFF00
+   Backdrop        =   0
+   CloseButton     =   True
+   Compatibility   =   ""
+   Composite       =   False
+   Frame           =   6
+   FullScreen      =   False
+   FullScreenButton=   False
+   HasBackColor    =   False
+   Height          =   101
+   ImplicitInstance=   True
+   LiveResize      =   True
+   MacProcID       =   0
+   MaxHeight       =   135
+   MaximizeButton  =   False
+   MaxWidth        =   304
+   MenuBar         =   2029336903
+   MenuBarVisible  =   True
+   MinHeight       =   0
+   MinimizeButton  =   True
+   MinWidth        =   168
+   Placement       =   0
+   Resizeable      =   True
+   Title           =   "Intelligent Subnet Calculator"
+   Visible         =   False
+   Width           =   304
+   Begin Label IPAdd_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   12
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   12
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "IP Address:"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   10.0
+      TextUnit        =   0
+      Top             =   3
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   56
+   End
+   Begin Label Mask_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   12
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   131
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Subnet Mask:"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   10.0
+      TextUnit        =   0
+      Top             =   3
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   65
+   End
+   Begin TextField IPAddress_Field
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   17
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   12
+      LimitText       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   10.0
+      TextUnit        =   0
+      Top             =   19
+      Underline       =   False
+      UseFocusRing    =   False
+      Visible         =   True
+      Width           =   105
+   End
+   Begin TextField Mask_Field
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   16
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   131
+      LimitText       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   10.0
+      TextUnit        =   0
+      Top             =   19
+      Underline       =   False
+      UseFocusRing    =   False
+      Visible         =   True
+      Width           =   105
+   End
+   Begin Canvas BottomBar
+      AcceptFocus     =   True
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   True
+      Enabled         =   True
+      EraseBackground =   False
+      Height          =   15
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   7
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Top             =   86
+      Transparent     =   True
+      UseFocusRing    =   False
+      Visible         =   True
+      Width           =   304
+   End
+   Begin Separator Separator2
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   4
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   87
+      Visible         =   True
+      Width           =   305
+   End
+   Begin Listbox TinyListbox
+      AutoDeactivate  =   True
+      AutoHideScrollbars=   True
+      Bold            =   False
+      Border          =   True
+      ColumnCount     =   1
+      ColumnsResizable=   False
+      ColumnWidths    =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      DefaultRowHeight=   -1
+      Enabled         =   True
+      EnableDrag      =   False
+      EnableDragReorder=   False
+      GridLinesHorizontal=   0
+      GridLinesVertical=   0
+      HasHeading      =   False
+      HeadingIndex    =   -1
+      Height          =   45
+      HelpTag         =   ""
+      Hierarchical    =   False
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      RequiresSelection=   False
+      Scope           =   0
+      ScrollbarHorizontal=   False
+      ScrollBarVertical=   True
+      SelectionType   =   0
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   False
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   43
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   304
+      _ScrollOffset   =   0
+      _ScrollWidth    =   -1
+   End
+   Begin PushButton SubmitButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "2"
+      Cancel          =   False
+      Caption         =   "Go!"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   252
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "Helvetica"
+      TextSize        =   10.0
+      TextUnit        =   0
+      Top             =   17
+      Underline       =   False
+      Visible         =   True
+      Width           =   40
+   End
+End
+#tag EndWindow
+
+#tag WindowCode
+	#tag Event
+		Sub Close()
+		  quit(0)
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub Minimize()
+		  #if TargetMacOS Then
+		    declare sub miniaturize lib "Cocoa" selector "miniaturize:" (windowRef as integer, id as Ptr)
+		    miniaturize(self.handle, nil)
+		  #endif
+		  TinyViewWindow.TinyViewRestore.Visible = True
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub MouseEnter()
+		  // OS Specific Declares to Lock Main/Tiny Windows in place if we set it
+		  
+		  //#if TargetMacOS Then
+		  //soft declare sub setMovable lib "Cocoa" selector "setMovable:" (windowRef as integer, yesNo as integer)
+		  //setMovable(self.handle, TinyViewWindow_LockInPlace)
+		  //#elseif TargetWin32 Then
+		  //
+		  //#endif
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub MouseMove(X As Integer, Y As Integer)
+		  ToolTip.Hide
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub Open()
+		  Me.Left = 10
+		  Me.Top = 50
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub Restore()
+		  TinyViewWindow.TinyViewRestore.Visible = False
+		End Sub
+	#tag EndEvent
+
+
+	#tag MenuHandler
+		Function FileQuit() As Boolean Handles FileQuit.Action
+			Quit(0)
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+
+	#tag Method, Flags = &h21
+		Private Sub ConstructContextMenu(Base as MenuItem)
+		  if TinyListbox.ListIndex <> -1 Then
+		    base.append(New MenuItem("View Binary"))
+		    base.append(New MenuItem("ARIN Lookup"))
+		    base.append(New MenuItem("Copy"))
+		  End if
+		  ConstructContextualReturnFlag = True
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub DoContextAction(hititem as MenuItem)
+		  if hitItem <> nil then
+		    Select Case hitItem.Text
+		    Case "View Binary"
+		      mCaptureSelectedRows
+		      mConvertDisplayBinHex
+		      BinaryHexView_Window.Show
+		      
+		    Case "ARIN Lookup"
+		      ARIN_Lookup = New ARIN_HTTP_RestFul
+		      ARIN_Lookup.SearchByMainWindow = True
+		      ARIN_Lookup.GetData("ip",TinyListbox.Cell(0,0))
+		      
+		    Case "Copy"
+		      app.mCopyMainListbox
+		    End Select
+		  end if
+		  
+		  ContextualReturnFlag = True
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fCalculateBinaryPadding(BinaryConversion as String) As String
+		  
+		  // Now Determine if we will need to Pad the Binary String with leading 0's since Xojo's Bin Function strips all Leading 0's
+		  Dim BinaryConversion_Len as Integer = BinaryConversion.Len
+		  
+		  Select Case BinaryConversion_Len
+		  Case 24
+		    BinaryConversion = "00000000"+BinaryConversion
+		  Case 25
+		    BinaryConversion = "0000000"+BinaryConversion
+		  Case 26
+		    BinaryConversion = "000000"+BinaryConversion
+		  Case 27
+		    BinaryConversion = "00000"+BinaryConversion
+		  Case 28
+		    BinaryConversion = "0000"+BinaryConversion
+		  Case 29
+		    BinaryConversion = "000"+BinaryConversion
+		  Case 30
+		    BinaryConversion = "00"+BinaryConversion
+		  Case 31
+		    BinaryConversion = "0"+BinaryConversion
+		  End Select
+		  
+		  Return BinaryConversion
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fConvert2Bin(DecimalInput as String) As String
+		  Dim FinalBinaryFormatted, Bin1, Bin2, Bin3, Bin4  as String
+		  
+		  Bin1 = DecimalInput.Left(8)
+		  Bin2 = DecimalInput.Mid(9,8)
+		  Bin3 = DecimalInput.Mid(17,8)
+		  Bin4 = DecimalInput.Mid(25,8)
+		  FinalBinaryFormatted = Bin1 + "." + Bin2  + "." + Bin3 + "." + Bin4
+		  
+		  Return FinalBinaryFormatted
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fConvert2Hex(DecimalInput as String) As String
+		  Dim HexFormatted, Hex1, Hex2, Hex3, Hex4  as String
+		  
+		  Hex1 = DecimalInput.Left(2)
+		  Hex2 = DecimalInput.Mid(3,2)
+		  Hex3 = DecimalInput.Mid(5,2)
+		  Hex4 = DecimalInput.Mid(7,2)
+		  HexFormatted = Hex1 + "-"+Hex2+"-"+Hex3+"-"+Hex4
+		  
+		  Return HexFormatted
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fConvertNotationtoDecimal(inboundNotation as String) As String
+		  Dim ConvertedValue as String
+		  
+		  Select Case inboundNotation
+		  Case "1"
+		    ConvertedValue = "128.0.0.0"
+		  Case "2"
+		    ConvertedValue = "192.0.0.0"
+		  Case "3"
+		    ConvertedValue = "224.0.0.0"
+		  Case "4"
+		    ConvertedValue = "240.0.0.0"
+		  Case "5"
+		    ConvertedValue = "248.0.0.0"
+		  Case "6"
+		    ConvertedValue = "252.0.0.0"
+		  Case "7"
+		    ConvertedValue = "254.0.0.0"
+		  Case "8"
+		    ConvertedValue = "255.0.0.0"
+		  Case "9"
+		    ConvertedValue = "255.128.0.0"
+		  Case "10"
+		    ConvertedValue = "255.192.0.0"
+		  Case "11"
+		    ConvertedValue = "255.224.0.0"
+		  Case "12"
+		    ConvertedValue = "255.240.0.0"
+		  Case "13"
+		    ConvertedValue = "255.248.0.0"
+		  Case "14"
+		    ConvertedValue = "255.252.0.0"
+		  Case "15"
+		    ConvertedValue = "255.254.0.0"
+		  Case "16"
+		    ConvertedValue = "255.255.0.0"
+		  Case "17"
+		    ConvertedValue = "255.255.128.0"
+		  Case "18"
+		    ConvertedValue = "255.255.192.0"
+		  Case "19"
+		    ConvertedValue = "255.255.224.0"
+		  Case "20"
+		    ConvertedValue = "255.255.240.0"
+		  Case "21"
+		    ConvertedValue = "255.255.248.0"
+		  Case "22"
+		    ConvertedValue = "255.255.252.0"
+		  Case "23"
+		    ConvertedValue = "255.255.254.0"
+		  Case "24"
+		    ConvertedValue = "255.255.255.0"
+		  Case "25"
+		    ConvertedValue = "255.255.255.128"
+		  Case "26"
+		    ConvertedValue = "255.255.255.192"
+		  Case "27"
+		    ConvertedValue = "255.255.255.224"
+		  Case "28"
+		    ConvertedValue = "255.255.255.240"
+		  Case "29"
+		    ConvertedValue = "255.255.255.248"
+		  Case "30"
+		    ConvertedValue = "255.255.255.252"
+		  Case "31"
+		    ConvertedValue = "255.255.255.254"
+		  Case "32"
+		    ConvertedValue = "255.255.255.255"
+		  End Select
+		  
+		  Return ConvertedValue
+		  
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fIPv4_Validation(inputIPv4address as string) As String
+		  
+		  // First Measure How many periods we have (Should only have 4
+		  Dim NumberOfPerids_RegEx as RegEx
+		  Dim NumberOfPerids_RegExMatch as RegExMatch
+		  Dim NumberOfPerids_HitText as String
+		  Dim Counter as Integer = 0
+		  // First Octet RegEx Parameters
+		  NumberOfPerids_RegEx = New RegEx
+		  NumberOfPerids_RegEx.Options.CaseSensitive = False
+		  NumberOfPerids_RegEx.Options.Greedy = True
+		  NumberOfPerids_RegEx.Options.MatchEmpty = True
+		  NumberOfPerids_RegEx.Options.DotMatchAll = True
+		  NumberOfPerids_RegEx.Options.StringBeginIsLineBegin = True
+		  NumberOfPerids_RegEx.Options.StringEndIsLineEnd = True
+		  NumberOfPerids_RegEx.Options.TreatTargetAsOneLine = False
+		  NumberOfPerids_RegEx.SearchPattern = "[.]"
+		  NumberOfPerids_RegExMatch = NumberOfPerids_RegEx.Search(inputIPv4address)
+		  
+		  While NumberOfPerids_RegExMatch <> Nil
+		    NumberOfPerids_HitText = NumberOfPerids_RegExMatch.SubExpressionString(0)
+		    NumberOfPerids_RegExMatch = NumberOfPerids_RegEx.Search
+		    Counter = Counter + 1
+		  Wend
+		  
+		  If Counter > 3 Then
+		    // Too many periods
+		    Return "Not_Valid"
+		  Elseif Counter < 3 Then
+		    // Not Enough periods
+		    Return "Not_Valid"
+		  Elseif Counter = 3 Then
+		    // Good
+		  end if
+		  
+		  
+		  
+		  // Break Down 4 Octets
+		  Dim Octet_1 as String = inputIPv4address.NthField(".",1)
+		  Dim Octet_2 as String = inputIPv4address.NthField(".",2)
+		  Dim Octet_3 as String = inputIPv4address.NthField(".",3)
+		  Dim Octet_4 as String = inputIPv4address.NthField(".",4)
+		  
+		  
+		  
+		  Dim Validate_Octet_1_RegEx as RegEx
+		  Dim Validate_Octet_1_RegExMatch as RegExMatch
+		  Dim Validate_Octet_1_HitText as String
+		  Dim Validate_Octet_2_RegEx as RegEx
+		  Dim Validate_Octet_2_RegExMatch as RegExMatch
+		  Dim Validate_Octet_2_HitText as String
+		  Dim Validate_Octet_3_RegEx as RegEx
+		  Dim Validate_Octet_3_RegExMatch as RegExMatch
+		  Dim Validate_Octet_3_HitText as String
+		  Dim Validate_Octet_4_RegEx as RegEx
+		  Dim Validate_Octet_4_RegExMatch as RegExMatch
+		  Dim Validate_Octet_4_HitText as String
+		  
+		  // First Octet RegEx Parameters
+		  Validate_Octet_1_RegEx = New RegEx
+		  Validate_Octet_1_RegEx.Options.CaseSensitive = False
+		  Validate_Octet_1_RegEx.Options.Greedy = True
+		  Validate_Octet_1_RegEx.Options.MatchEmpty = True
+		  Validate_Octet_1_RegEx.Options.DotMatchAll = True
+		  Validate_Octet_1_RegEx.Options.StringBeginIsLineBegin = True
+		  Validate_Octet_1_RegEx.Options.StringEndIsLineEnd = True
+		  Validate_Octet_1_RegEx.Options.TreatTargetAsOneLine = False
+		  Validate_Octet_1_RegEx.SearchPattern = "\b([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-1][0-9]|22[0-3])\b"
+		  // Second Octet RegEx Parameters (allow 0-255)
+		  Validate_Octet_2_RegEx = New RegEx
+		  Validate_Octet_2_RegEx.Options.CaseSensitive = False
+		  Validate_Octet_2_RegEx.Options.Greedy = True
+		  Validate_Octet_2_RegEx.Options.MatchEmpty = True
+		  Validate_Octet_2_RegEx.Options.DotMatchAll = True
+		  Validate_Octet_2_RegEx.Options.StringBeginIsLineBegin = True
+		  Validate_Octet_2_RegEx.Options.StringEndIsLineEnd = True
+		  Validate_Octet_2_RegEx.Options.TreatTargetAsOneLine = False
+		  Validate_Octet_2_RegEx.SearchPattern = "\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b"
+		  // Third Octet RegEx Parameters (allow 0-255)
+		  Validate_Octet_3_RegEx = New RegEx
+		  Validate_Octet_3_RegEx.Options.CaseSensitive = False
+		  Validate_Octet_3_RegEx.Options.Greedy = True
+		  Validate_Octet_3_RegEx.Options.MatchEmpty = True
+		  Validate_Octet_3_RegEx.Options.DotMatchAll = True
+		  Validate_Octet_3_RegEx.Options.StringBeginIsLineBegin = True
+		  Validate_Octet_3_RegEx.Options.StringEndIsLineEnd = True
+		  Validate_Octet_3_RegEx.Options.TreatTargetAsOneLine = False
+		  Validate_Octet_3_RegEx.SearchPattern = "\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b"
+		  // Fourth Octet RegEx Parameters (allow 1-254)
+		  Validate_Octet_4_RegEx = New RegEx
+		  Validate_Octet_4_RegEx.Options.CaseSensitive = False
+		  Validate_Octet_4_RegEx.Options.Greedy = True
+		  Validate_Octet_4_RegEx.Options.MatchEmpty = True
+		  Validate_Octet_4_RegEx.Options.DotMatchAll = True
+		  Validate_Octet_4_RegEx.Options.StringBeginIsLineBegin = True
+		  Validate_Octet_4_RegEx.Options.StringEndIsLineEnd = True
+		  Validate_Octet_4_RegEx.Options.TreatTargetAsOneLine = False
+		  Validate_Octet_4_RegEx.SearchPattern = "\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-1][0-9]|2[0-4][0-9]|25[0-4])\b"
+		  
+		  
+		  // RegEx Process First Octet Results
+		  Validate_Octet_1_RegExMatch = Validate_Octet_1_RegEx.Search(Octet_1)
+		  if Validate_Octet_1_RegExMatch <> nil then
+		    Validate_Octet_1_HitText = Validate_Octet_1_RegExMatch.SubExpressionString(0)
+		    Validate_Octet_1_HitText = "Valid"
+		    // Passed 1st Octet Validation - Move on to 2nd Octet Validation
+		  elseif Validate_Octet_1_RegExMatch = nil then
+		    // We did not have a Valid 1st Octet - Return
+		    Return "Not_Valid"
+		  end if
+		  
+		  // RegEx Process Second Octet Results
+		  Validate_Octet_2_RegExMatch = Validate_Octet_2_RegEx.Search(Octet_2)
+		  if Validate_Octet_2_RegExMatch <> nil then
+		    Validate_Octet_2_HitText = Validate_Octet_2_RegExMatch.SubExpressionString(0)
+		    Validate_Octet_2_HitText = "Valid"
+		    // Passed 2nd Octet Validation - Move on to 3rd Octet Validation
+		  elseif Validate_Octet_2_RegExMatch = nil then
+		    // We did not have a Valid 2nd Octet - Return
+		    Return "Not_Valid"
+		  end if
+		  
+		  // RegEx Process Third Octet Results
+		  Validate_Octet_3_RegExMatch = Validate_Octet_3_RegEx.Search(Octet_3)
+		  if Validate_Octet_3_RegExMatch <> nil then
+		    Validate_Octet_3_HitText = Validate_Octet_3_RegExMatch.SubExpressionString(0)
+		    Validate_Octet_3_HitText = "Valid"
+		    // Passed 3rd Octet Validation - Move on to 4th Octet Validation
+		  elseif Validate_Octet_3_RegExMatch = nil then
+		    // We did not have a Valid 3rd Octet - Return
+		    Return "Not_Valid"
+		  end if
+		  
+		  // RegEx Process Fourth and FINAL Octet
+		  Validate_Octet_4_RegExMatch = Validate_Octet_4_RegEx.Search(Octet_4)
+		  if Validate_Octet_4_RegExMatch <> nil then
+		    Validate_Octet_4_HitText = Validate_Octet_4_RegExMatch.SubExpressionString(0)
+		    Validate_Octet_4_HitText = "Valid"
+		    // Passed 4th Octet Validation - Return Successful
+		    Return "Valid"
+		  elseif Validate_Octet_4_RegExMatch = nil then
+		    // We did not have a Valid 3rd Octet - Return
+		    Return "Not_Valid"
+		  end if
+		  
+		  
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fSubnetMaskValidation(inputMask as string) As String
+		  // Did we receive a /xx Notation? IF so lets convert it
+		  Dim DetectShortFormNotation_RegEx as RegEx
+		  Dim DetectShortFormNotation_RegExMatch as RegExMatch
+		  Dim DetectShortFormNotation_HitText as String
+		  Dim CalculateNotation2Decimal as String
+		  DetectShortFormNotation_RegEx = New RegEx
+		  DetectShortFormNotation_RegEx.Options.CaseSensitive = False
+		  DetectShortFormNotation_RegEx.Options.Greedy = True
+		  DetectShortFormNotation_RegEx.Options.MatchEmpty = True
+		  DetectShortFormNotation_RegEx.Options.DotMatchAll = True
+		  DetectShortFormNotation_RegEx.Options.StringBeginIsLineBegin = True
+		  DetectShortFormNotation_RegEx.Options.StringEndIsLineEnd = True
+		  DetectShortFormNotation_RegEx.Options.TreatTargetAsOneLine = False
+		  DetectShortFormNotation_RegEx.SearchPattern = "(^/)\b([1-9]|1[0-9]|2[0-9]|3[0-2])\b"
+		  
+		  // RegEx Process Short Form Notation
+		  DetectShortFormNotation_RegExMatch = DetectShortFormNotation_RegEx.Search(inputMask)
+		  if DetectShortFormNotation_RegExMatch <> nil then
+		    // Detected ShortForm Notation
+		    DetectShortFormNotation_HitText = DetectShortFormNotation_RegExMatch.SubExpressionString(0)
+		    
+		    // Strip off the /
+		    Dim Notation as String = Trim(DetectShortFormNotation_HitText.Mid(2,2))
+		    // Convert Notation into Decimal
+		    CalculateNotation2Decimal = fConvertNotationtoDecimal(Notation)
+		    inputMask = CalculateNotation2Decimal
+		  elseif DetectShortFormNotation_RegExMatch = nil then
+		    // Did not Detect Short Form Notation .. Continue on to Decimal Based Subnet Mask Validation
+		  end if
+		  
+		  // Decimal Based Subnet Validation
+		  Dim Validate_SubnetMask_RegEx as RegEx
+		  Dim Validate_SubnetMask_RegExMatch as RegExMatch
+		  Dim Validate_SubnetMask_HitText as String
+		  
+		  Validate_SubnetMask_RegEx = New RegEx
+		  Validate_SubnetMask_RegEx.Options.CaseSensitive = False
+		  Validate_SubnetMask_RegEx.Options.Greedy = True
+		  Validate_SubnetMask_RegEx.Options.MatchEmpty = True
+		  Validate_SubnetMask_RegEx.Options.DotMatchAll = True
+		  Validate_SubnetMask_RegEx.Options.StringBeginIsLineBegin = True
+		  Validate_SubnetMask_RegEx.Options.StringEndIsLineEnd = True
+		  Validate_SubnetMask_RegEx.Options.TreatTargetAsOneLine = False
+		  Validate_SubnetMask_RegEx.SearchPattern = "\b(128.0.0.0|192.0.0.0|224.0.0.0|240.0.0.0|248.0.0.0|252.0.0.0|254.0.0.0|255.0.0.0|255.128.0.0|255.192.0.0|255.224.0.0|255.240.0.0|255.248.0.0|255.252.0.0|255.254.0.0|255.255.0.0|255.255.128.0|255.255.192.0|255.255.224.0|255.255.240.0|255.255.248.0|255.255.252.0|255.255.254.0|255.255.255.0|255.255.255.128|255.255.255.192|255.255.255.224|255.255.255.240|255.255.255.248|255.255.255.252|255.255.255.254)\b"
+		  
+		  // RegEx Process Subnet Mask Validation
+		  Validate_SubnetMask_RegExMatch = Validate_SubnetMask_RegEx.Search(inputMask)
+		  if Validate_SubnetMask_RegExMatch <> nil then
+		    Validate_SubnetMask_HitText = Validate_SubnetMask_RegExMatch.SubExpressionString(0)
+		    
+		    Return Validate_SubnetMask_HitText
+		  elseif Validate_SubnetMask_RegExMatch = nil then
+		    Return "Not_Valid"
+		  end if
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mCaptureSelectedRows()
+		  For i as integer=0 to TinyListbox.ListCount - 1
+		    if TinyListbox.Selected( i ) then
+		      TinyListboxSelected.Append i
+		    end if
+		  Next
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mConvertDisplayBinHex()
+		  Dim i As Integer
+		  Dim NetworkID_Hex, NetworkID_Bin, NetworkID_HexFormatted, NetworkID_BinFormatted, NetworkID_FinalBinaryFormatted as String
+		  Dim Host1_Hex, Host1_HexFormatted,Host1_Bin,Host1_BinFormatted,Host1_FinalBinaryFormatted as String
+		  Dim Host2_Hex, Host2_HexFormatted,Host2_Bin,Host2_BinFormatted,Host2_FinalBinaryFormatted as String
+		  Dim BCast_Hex, BCast_HexFormatted, BCast_Bin,BCast_BinFormatted,BCast_FinalBinaryFormatted as String
+		  
+		  
+		  For i = 0 To UBound(TinyListboxSelected)
+		    
+		    // ************************ NETWORK ID ************************
+		    // HEX Conversion
+		    NetworkID_Hex = Hex(TinyListbox.CellTag(0,0))
+		    if NetworkID_Hex.Len <= 7 Then
+		      NetworkID_Hex = "0"+NetworkID_Hex
+		    End if
+		    NetworkID_HexFormatted = fConvert2Hex(NetworkID_Hex)
+		    // Binary Conversion
+		    NetworkID_Bin = Bin(TinyListbox.CellTag(0,0))
+		    NetworkID_BinFormatted = fCalculateBinaryPadding(NetworkID_Bin)
+		    NetworkID_FinalBinaryFormatted = fConvert2Bin(NetworkID_BinFormatted)
+		    
+		    // ************************ FIRST HOST ************************
+		    //// HEX Conversion
+		    Host1_Hex = Hex(TinyListbox.CellTag(0,1))
+		    if Host1_Hex.Len <= 7 Then
+		      Host1_Hex = "0"+Host1_Hex
+		    End if
+		    Host1_HexFormatted = fConvert2Hex(Host1_Hex)
+		    // Binary Conversion
+		    Host1_Bin = Bin(TinyListbox.CellTag(0,1))
+		    Host1_BinFormatted = fCalculateBinaryPadding(Host1_Bin)
+		    Host1_FinalBinaryFormatted = fConvert2Bin(Host1_BinFormatted)
+		    
+		    // ************************ LAST HOST ************************
+		    //// HEX Conversion
+		    Host2_Hex = Hex(TinyListbox.CellTag(0,2))
+		    if Host2_Hex.Len <= 7 Then
+		      Host2_Hex = "0"+Host2_Hex
+		    End if
+		    Host2_HexFormatted = fConvert2Hex(Host2_Hex)
+		    // Binary Conversion
+		    Host2_Bin = Bin(TinyListbox.CellTag(0,2))
+		    Host2_BinFormatted = fCalculateBinaryPadding(Host2_Bin)
+		    Host2_FinalBinaryFormatted = fConvert2Bin(Host2_BinFormatted)
+		    
+		    // ************************ BROADCAST ID ************************
+		    //// HEX Conversion
+		    BCast_Hex = Hex(TinyListbox.CellTag(0,3))
+		    if BCast_Hex.Len <= 7 Then
+		      BCast_Hex = "0"+BCast_Hex
+		    End if
+		    BCast_HexFormatted = fConvert2Hex(BCast_Hex)
+		    // Binary Conversion
+		    BCast_Bin = Bin(TinyListbox.CellTag(0,3))
+		    BCast_BinFormatted = fCalculateBinaryPadding(BCast_Bin)
+		    BCast_FinalBinaryFormatted = fConvert2Bin(BCast_BinFormatted)
+		    
+		    // Display to Listbox on Binary/Hex View Window
+		    BinaryHexView_Window.BinaryHexView_Listbox.AddRow  "(1)",TinyListbox.Cell(0,0),NetworkID_HexFormatted,NetworkID_FinalBinaryFormatted
+		    BinaryHexView_Window.BinaryHexView_Listbox.AddRow  "(1)",TinyListbox.Cell(0,1),Host1_HexFormatted,Host1_FinalBinaryFormatted
+		    BinaryHexView_Window.BinaryHexView_Listbox.AddRow  "(1)",TinyListbox.Cell(0,2),Host2_HexFormatted,Host2_FinalBinaryFormatted
+		    BinaryHexView_Window.BinaryHexView_Listbox.AddRow  "(1)",TinyListbox.Cell(0,3),BCast_HexFormatted,BCast_FinalBinaryFormatted
+		    BinaryHexView_Window.BinaryHexView_Listbox.AddRow ""
+		  Next i
+		  
+		  // Clear out Selected Listbox Rows Array
+		  Redim  TinyListboxSelected(-1)
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mSubmit()
+		  // Force one Last IP Address Validation
+		  Dim IPV4_Validation as String =TinyViewWindow. fIPv4_Validation(IPAddress_Field.Text)
+		  Select Case IPV4_Validation
+		  Case "Not_Valid"
+		    Tooltip.Show("Please Enter a Valid IPv4 Address", System.MouseX, System.MouseY, True)
+		    IPAddress_Field.Text = " "
+		    Exit
+		  End Select
+		  
+		  // Force one last Subnet Mask Validation
+		  Dim SubnetMask_Validation as String = TinyViewWindow.fSubnetMaskValidation(Mask_Field.Text)
+		  Select Case SubnetMask_Validation
+		  Case "Not_Valid"
+		    Tooltip.Show("Please Enter a Valid Subnet Mask", System.MouseX, System.MouseY, True)
+		    Mask_Field.Text = ""
+		    Exit
+		  Else
+		    Mask_Field.Text = SubnetMask_Validation
+		  End Select
+		  
+		  // Instantiate Subnet Calculator Class
+		  TinyViewWindow.SubnetCalculatorSubClass2 = New SubnetCalculator_Class
+		  // Clear Out Listbox First
+		  TinyViewWindow.TinyListbox.DeleteAllRows
+		  // Send the SubnetCalculator GetSubnetRangeWithoutHosts Method
+		  TinyViewWindow.SubnetCalculatorSubClass2.GetSingleRange(IPAddress_Field.Text,Mask_Field.Text, "Tiny View")
+		  // Begin back at Row 0
+		  TinyViewWindow.TinyListbox.ScrollPosition = 0
+		End Sub
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h0
+		ARIN_Lookup As ARIN_HTTP_RestFul
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private ConstructContextualReturnFlag As Boolean = False
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private ContextualReturnFlag As Boolean = False
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		IsMinimized As Boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		SubnetCalculatorSubClass2 As SubnetCalculator_Class
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		TinyListboxSelected() As Integer
+	#tag EndProperty
+
+
+#tag EndWindowCode
+
+#tag Events IPAddress_Field
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  Select Case key
+		  Case Chr(32)
+		    Tooltip.Show("Sorry, Spaces not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(33)
+		    Tooltip.Show("Sorry, Exclamation mark not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(34)
+		    Tooltip.Show("Sorry, Quotation marks not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(35)
+		    Tooltip.Show("Sorry, Pound sign not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(36)
+		    Tooltip.Show("Sorry, Dollar sign not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(37)
+		    Tooltip.Show("Sorry, Percentage sign not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(38)
+		    Tooltip.Show("Sorry, Ampersand not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(39)
+		    Tooltip.Show("Sorry, Apostrophe not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(40)
+		    Tooltip.Show("Sorry, Open Parenthesis not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(41)
+		    Tooltip.Show("Sorry, Closed Parenthesis not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(42)
+		    Tooltip.Show("Sorry, Asterisk not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(43)
+		    Tooltip.Show("Sorry, Plus signs not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(44)
+		    Tooltip.Show("Sorry, Commas not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(45)
+		    Tooltip.Show("Sorry, Hyphen not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		    // Allow 46 (Period)
+		    
+		  Case Chr(47)
+		    Tooltip.Show("Sorry, Only Numbers and Periods allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		    // Allow 48 - 57 (Numbers)
+		    
+		  Case Chr(58)
+		    Tooltip.Show("Sorry, Colon not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(59)
+		    Tooltip.Show("Sorry, Semi Colon not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(60)
+		    Tooltip.Show("Sorry, Less than bracket not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(61)
+		    Tooltip.Show("Sorry, Equal sign not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(62)
+		    Tooltip.Show("Sorry, Greater than bracket not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(63)
+		    Tooltip.Show("Sorry, Question Mark not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(64)
+		    Tooltip.Show("Sorry, ""At"" signs not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(65) to Chr(90)
+		    Tooltip.Show("Sorry, Only Numbers and Periods allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(91)
+		    Tooltip.Show("Sorry, Open Square Bracket not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(92)
+		    Tooltip.Show("Sorry, Back Slash not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(93)
+		    Tooltip.Show("Sorry, Closed Square Bracket not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(94)
+		    Tooltip.Show("Sorry, Caret not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(95)
+		    Tooltip.Show("Sorry, Underscore not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(96)
+		    Tooltip.Show("Sorry, Tilde not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(97) to Chr(122)
+		    Tooltip.Show("Sorry, Only Numbers and Periods allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(123)
+		    Tooltip.Show("Sorry, Open Curly Brackets not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(124)
+		    Tooltip.Show("Sorry, Pipe not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(125)
+		    Tooltip.Show("Sorry, Closed Curly Brackets not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(126)
+		    Tooltip.Show("Sorry, Grave Accent Marks not allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		    
+		  Case Chr(127)
+		    Tooltip.Show("Sorry, Only Numbers and Periods allowed", System.MouseX, System.MouseY, True)
+		    Return True
+		  End Select
+		  
+		  If key = Chr(9) Or key = Chr(13) Then
+		    Dim IPV4_Validation as String = TinyViewWindow.fIPv4_Validation(me.Text)
+		    Select Case IPV4_Validation
+		    Case "Not_Valid"
+		      Tooltip.Show("Please Enter a Valid IPv4 Address", System.MouseX, System.MouseY, True)
+		      Me.Text = " "
+		      Return True
+		    End Select
+		  End if
+		  
+		  If Key = Chr(13) Then
+		    Mask_Field.SetFocus
+		  End if
+		  
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub MouseMove(X As Integer, Y As Integer)
+		  ToolTip.Hide
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  //Declare Sub setBezelStyle Lib "Cocoa" Selector "setBezelStyle:" (handle As Integer, value As Integer)
+		  //setBezelStyle(Me.Handle, 1)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  Dim IPV4_Validation as String = fIPv4_Validation(me.Text)
+		  Select Case IPV4_Validation
+		  Case "Not_Valid"
+		    Tooltip.Show("Please Enter a Valid IPv4 Address", System.MouseX, System.MouseY, True)
+		    Me.Text = ""
+		  End Select
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  Return True
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events Mask_Field
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  If key = Chr(9) Or key = Chr(13) Then 'tab key,right arrow, return 'move to next available entry cell
+		    // Run Subnet Mask validation
+		    Dim SubnetMask_Validation as String = TinyViewWindow.fSubnetMaskValidation(me.Text)
+		    Select Case SubnetMask_Validation
+		    Case "Not_Valid"
+		      Tooltip.Show("Please Enter a Valid Subnet Mask", System.MouseX, System.MouseY, True)
+		      me.Text = ""
+		      Return True
+		    Else
+		      me.Text = SubnetMask_Validation
+		      SubmitButton.SetFocus
+		    End Select
+		  End If
+		  
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub MouseMove(X As Integer, Y As Integer)
+		  ToolTip.Hide
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  // Run Subnet Mask validation
+		  Dim SubnetMask_Validation as String = fSubnetMaskValidation(me.Text)
+		  Select Case SubnetMask_Validation
+		  Case "Not_Valid"
+		    Tooltip.Show("Please Enter a Valid Subnet Mask", System.MouseX, System.MouseY, True)
+		    me.Text = ""
+		  Else
+		    me.Text = SubnetMask_Validation
+		  End Select
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events BottomBar
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  // Awesome Gradient Fill
+		  dim i as integer, ratio, endratio as Double
+		  dim StartColor, EndColor as Color
+		  g.Transparency = App.BottomBarTransparencyValue
+		  
+		  StartColor = &cFFFFFF
+		  EndColor = App. ThemeColor_BottomBar
+		  
+		  // Draw The Gradient
+		  for i = g.Height DownTo 0
+		    // Need our ratios of start / end
+		    ratio = (i/g.Height)
+		    endratio = ((g.Height-i)/g.Height)
+		    // Determine the Color
+		    g.ForeColor = RGB(StartColor.Red * endratio + EndColor.Red * ratio, StartColor.Green * endratio + EndColor.Green * ratio, StartColor.Blue * endratio + EndColor.Blue * ratio)
+		    // Draw the current line
+		    g.DrawLine 0, i, g.Width, i
+		  next
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TinyListbox
+	#tag Event
+		Sub Open()
+		  // Setup Default Behavior
+		  Me.ColumnsResizable = True
+		  Me.RequiresSelection = False
+		  Me.ColumnCount = 4
+		  Me.HasHeading = True
+		  Me.AutoHideScrollbars = True
+		  Me.ScrollBarHorizontal = True
+		  Me.ScrollBarVertical = True
+		  Me.UseFocusRing = False
+		  Me.ColumnWidths = "75,75,75,75"
+		  Me.TextFont = "Helvetica"
+		  Me.TextSize = 9
+		  Me.SelectionType = Listbox.SelectionSingle
+		  Me.DefaultRowHeight = 14
+		  
+		  Me.Heading(0) = "Network ID"
+		  Me.Heading(1) = "First Host"
+		  Me.Heading(2) = "Last Host"
+		  Me.Heading(3) = "Broadcast"
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub CellLostFocus(row as Integer, column as Integer)
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
+		  ConstructContextMenu(base)
+		  
+		  if ConstructContextualReturnFlag = True then
+		    ConstructContextualReturnFlag = false
+		    Return True
+		  elseif ConstructContextualReturnFlag = False then
+		    Return False
+		  end if
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
+		  // If the ListBox is Empty then just Return
+		  if ContextualReturnFlag = True then
+		    ContextualReturnFlag = false
+		    Return True
+		  elseif ContextualReturnFlag = False then
+		    Return False
+		  end if
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(x As Integer, y As Integer) As Boolean
+		  If  NOT IsContextualClick then Return False
+		  
+		  Dim base as New menuItem
+		  ConstructContextMenu(base)
+		  Dim hitItem as MenuItem =  Base.Popup
+		  DoContextAction(hitItem)
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean
+		  // Get Cell Width
+		  Dim RW as integer = me.Column(column).WidthActual
+		  Dim RH as integer = me.RowHeight
+		  
+		  //Fill background Cell color (multicolor) of Only Added Rows
+		  If row Mod 2=0 then
+		    g.foreColor = App.ThemeColor_Listbox_Color1
+		  else
+		    g.foreColor = App.ThemeColor_Listbox_Color2
+		  end if
+		  g.FillRect 1,1,RW,RH
+		  
+		  if me.selected(Row) Then
+		    g.ForeColor = &ceafbff
+		    g.FillRect 0,0,RW,RH
+		  End if
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events SubmitButton
+	#tag Event
+		Sub Action()
+		  mSubmit
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if Key = Chr(13) Then
+		    mSubmit
+		  End if
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag ViewBehavior
+	#tag ViewProperty
+		Name="BackColor"
+		Visible=true
+		Group="Appearance"
+		InitialValue="&hFFFFFF"
+		Type="Color"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Backdrop"
+		Visible=true
+		Group="Appearance"
+		Type="Picture"
+		EditorType="Picture"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="CloseButton"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Frame"
+		Visible=true
+		Group="Appearance"
+		InitialValue="0"
+		Type="Integer"
+		EditorType="Enum"
+		#tag EnumValues
+			"0 - Document"
+			"1 - Movable Modal"
+			"2 - Modal Dialog"
+			"3 - Floating Window"
+			"4 - Plain Box"
+			"5 - Shadowed Box"
+			"6 - Rounded Window"
+			"7 - Global Floating Window"
+			"8 - Sheet Window"
+			"9 - Metal Window"
+			"10 - Drawer Window"
+			"11 - Modeless Dialog"
+		#tag EndEnumValues
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="FullScreen"
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="FullScreenButton"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasBackColor"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Position"
+		InitialValue="400"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="IsMinimized"
+		Group="Behavior"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LiveResize"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=true
+		Group="Appearance"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaxHeight"
+		Visible=true
+		Group="Position"
+		InitialValue="32000"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaximizeButton"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MaxWidth"
+		Visible=true
+		Group="Position"
+		InitialValue="32000"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBar"
+		Visible=true
+		Group="Appearance"
+		Type="MenuBar"
+		EditorType="MenuBar"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBarVisible"
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MinHeight"
+		Visible=true
+		Group="Position"
+		InitialValue="64"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MinimizeButton"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MinWidth"
+		Visible=true
+		Group="Position"
+		InitialValue="64"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Placement"
+		Visible=true
+		Group="Position"
+		InitialValue="0"
+		Type="Integer"
+		EditorType="Enum"
+		#tag EnumValues
+			"0 - Default"
+			"1 - Parent Window"
+			"2 - Main Screen"
+			"3 - Parent Window Screen"
+			"4 - Stagger"
+		#tag EndEnumValues
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Resizeable"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Title"
+		Visible=true
+		Group="Appearance"
+		InitialValue="Untitled"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Visible"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Position"
+		InitialValue="600"
+		Type="Integer"
+	#tag EndViewProperty
+#tag EndViewBehavior

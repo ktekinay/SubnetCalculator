@@ -1,0 +1,1221 @@
+#tag Window
+Begin ContainerControl IP_Options_Container
+   AcceptFocus     =   False
+   AcceptTabs      =   True
+   AutoDeactivate  =   True
+   BackColor       =   &cFFFFFF00
+   Backdrop        =   0
+   Compatibility   =   ""
+   Enabled         =   True
+   EraseBackground =   True
+   HasBackColor    =   False
+   Height          =   154
+   HelpTag         =   ""
+   InitialParent   =   ""
+   Left            =   0
+   LockBottom      =   False
+   LockLeft        =   False
+   LockRight       =   False
+   LockTop         =   False
+   TabIndex        =   0
+   TabPanelIndex   =   0
+   TabStop         =   True
+   Top             =   0
+   Transparent     =   True
+   UseFocusRing    =   False
+   Visible         =   True
+   Width           =   438
+   Begin Label QOS_Match_PopUpMenu
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   9
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_MatchQOS"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   27
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   106
+   End
+   Begin PopupMenu DSCP_PopUpMenu
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   False
+      Height          =   20
+      HelpTag         =   "Select the desired DSCP code point or Assured Forwarding class"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   157
+      ListIndex       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   False
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   48
+      Underline       =   False
+      Visible         =   False
+      Width           =   133
+   End
+   Begin PopupMenu QOS_OptionsPopUpMenu
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   9
+      ListIndex       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   False
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   48
+      Underline       =   False
+      Visible         =   True
+      Width           =   133
+   End
+   Begin Label Specific_Options_Title_Label
+      AutoDeactivate  =   True
+      Bold            =   True
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   9
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLEIGRPOptions_IP_SpecificOptions"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   13.0
+      TextUnit        =   0
+      Top             =   0
+      Transparent     =   True
+      Underline       =   True
+      Visible         =   True
+      Width           =   240
+   End
+   Begin Label LogInput_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   31
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_LogInput"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   101
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   69
+   End
+   Begin CheckBox LogInput_CheckBox
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   9
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      State           =   0
+      TabIndex        =   5
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   101
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   18
+   End
+   Begin CheckBox Fragments_CheckBox
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   9
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      State           =   0
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   122
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   18
+   End
+   Begin Label Fragments_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   31
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   7
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_Fragments"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   122
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   69
+   End
+   Begin Label DSCP_Choice_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   157
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_DSCPValue"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   27
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   135
+   End
+   Begin Label Prec_Choice_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   157
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_PrecValue"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   27
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   139
+   End
+   Begin Label Match_Bits_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   9
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLEIGRPOptions_MatchIP"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   80
+      Transparent     =   True
+      Underline       =   True
+      Visible         =   True
+      Width           =   116
+   End
+   Begin PopupMenu Precedence_PopUpMenu
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   False
+      Height          =   20
+      HelpTag         =   "Select the desired Precedence value"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   157
+      ListIndex       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   False
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   48
+      Underline       =   False
+      Visible         =   False
+      Width           =   133
+   End
+   Begin PopupMenu TOS_PopUpMenu
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   False
+      Height          =   20
+      HelpTag         =   "Select the desired TOS value"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   157
+      ListIndex       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   False
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   48
+      Underline       =   False
+      Visible         =   False
+      Width           =   133
+   End
+   Begin Label TimeRange_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   180
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_UseTimeRange"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   101
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   116
+   End
+   Begin CheckBox TimeRange_CheckBox
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   157
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      State           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   101
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   18
+   End
+   Begin TextField TimeRange_TextField
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   "time-range name"
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   False
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   160
+      LimitText       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   124
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   130
+   End
+   Begin Label TimeRangeTitleLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   157
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_TimeRange"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   80
+      Transparent     =   True
+      Underline       =   True
+      Visible         =   True
+      Width           =   116
+   End
+   Begin Label TOS_Choice_Label
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   157
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "#kACLOptions_TOSValue"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   27
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   135
+   End
+End
+#tag EndWindow
+
+#tag WindowCode
+	#tag Method, Flags = &h21
+		Private Function fConvertToProperQOSValues(InputPortString as String) As String
+		  // Find only the proper QOS Values
+		  Dim FindPortNumber_RegEx as RegEx
+		  Dim FindPortNumber_RegExMatch as RegExMatch
+		  Dim FindPortNumber_Value as String
+		  FindPortNumber_RegEx = New RegEx
+		  FindPortNumber_RegEx.Options.Greedy = False
+		  FindPortNumber_RegEx.Options.caseSensitive = false
+		  FindPortNumber_RegEx.SearchPattern = "(?<=[(]).+(?=[)])"
+		  FindPortNumber_RegExMatch = FindPortNumber_RegEx.Search(InputPortString)
+		  if FindPortNumber_RegExMatch <> nil then
+		    FindPortNumber_Value = FindPortNumber_RegExMatch.SubExpressionString(0)
+		  end if
+		  
+		  // Just in case we pass in a true number pass it through
+		  if FindPortNumber_Value = "" Then
+		    FindPortNumber_Value = InputPortString
+		  End if
+		  
+		  Return FindPortNumber_Value
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mCreate_DSCP_Array()
+		  // If Enteries are already there then don't process
+		  Dim AlreadyEntered as Boolean = False
+		  
+		  // catch duplicate entries
+		  for i as integer = 0 to UBound(Options_DSCP_Array)
+		    Select Case Options_DSCP_Array(i)
+		    Case "af21 (18)"
+		      AlreadyEntered = True
+		      exit sub
+		    Case "af22 (20)"
+		      AlreadyEntered = True
+		      exit sub
+		    Case "best effort (0)"
+		      AlreadyEntered = True
+		      exit sub
+		    Case "ef (46)"
+		      AlreadyEntered = True
+		      exit sub
+		    End Select
+		  Next i
+		  
+		  If AlreadyEntered = False Then
+		    Options_DSCP_Array.Append ""
+		    Options_DSCP_Array.Append "best effort (0)"
+		    Options_DSCP_Array.Append "ef (46)"
+		    Options_DSCP_Array.Append "af11 (10)"
+		    Options_DSCP_Array.Append "af12 (12)"
+		    Options_DSCP_Array.Append "af13 (14)"
+		    Options_DSCP_Array.Append "af21 (18)"
+		    Options_DSCP_Array.Append "af22 (20)"
+		    Options_DSCP_Array.Append "af23 (22)"
+		    Options_DSCP_Array.Append "af31 (26)"
+		    Options_DSCP_Array.Append "af32 (28)"
+		    Options_DSCP_Array.Append "af33 (30)"
+		    Options_DSCP_Array.Append "af41 (34)"
+		    Options_DSCP_Array.Append "af42 (36)"
+		    Options_DSCP_Array.Append "af43 (38)"
+		    Options_DSCP_Array.Append "cs1 (8)"
+		    Options_DSCP_Array.Append "cs2 (16)"
+		    Options_DSCP_Array.Append "cs3 (24)"
+		    Options_DSCP_Array.Append "cs4 (32)"
+		    Options_DSCP_Array.Append "cs5 (40)"
+		    Options_DSCP_Array.Append "cs6 (48)"
+		    Options_DSCP_Array.Append "cs7 (56)"
+		    
+		    
+		    // Load Pop Up Menu
+		    for i as integer = 0 to UBound(Options_DSCP_Array)
+		      DSCP_PopUpMenu.AddRow (Options_DSCP_Array(i))
+		    Next i
+		    
+		  End if
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mCreate_Precedence_Array()
+		  // If Enteries are already there then don't process
+		  Dim AlreadyEntered as Boolean = False
+		  
+		  for i as integer = 0 to UBound(Options_Precedence_Array)
+		    Select Case Options_Precedence_Array(i)
+		    case "routine (0)"
+		      AlreadyEntered = True
+		      exit sub
+		    Case "priority (1)"
+		      AlreadyEntered = True
+		      exit sub
+		    End  Select
+		  Next i
+		  
+		  If AlreadyEntered = False Then
+		    Options_Precedence_Array.Append ""
+		    Options_Precedence_Array.Append "routine (0)"
+		    Options_Precedence_Array.Append "priority (1)"
+		    Options_Precedence_Array.Append "immediate (2)"
+		    Options_Precedence_Array.Append "flash (3)"
+		    Options_Precedence_Array.Append "flash-override (4)"
+		    Options_Precedence_Array.Append "critical (5)"
+		    Options_Precedence_Array.Append "internet (6)"
+		    Options_Precedence_Array.Append "network (7)"
+		    
+		    for i as integer = 0 to UBound(Options_Precedence_Array)
+		      Precedence_PopUpMenu.AddRow (Options_Precedence_Array(i))
+		    Next i
+		    
+		  End if
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mCreate_TOS_Array()
+		  // If Enteries are already there then don't process
+		  Dim AlreadyEntered as Boolean = False
+		  
+		  for i as integer = 0 to UBound(Options_TOS_Array)
+		    Select Case Options_TOS_Array(i)
+		    case "priority(1)"
+		      AlreadyEntered = True
+		      exit sub
+		    case "flash (3)"
+		      AlreadyEntered = True
+		      exit sub
+		    End Select
+		  Next i
+		  
+		  If AlreadyEntered = False Then
+		    Options_TOS_Array.Append ""
+		    Options_TOS_Array.Append "routine (0)"
+		    Options_TOS_Array.Append "priority(1)"
+		    Options_TOS_Array.Append "immediate (2)"
+		    Options_TOS_Array.Append "flash (3)"
+		    Options_TOS_Array.Append "flash override (4)"
+		    Options_TOS_Array.Append "critical (5)"
+		    Options_TOS_Array.Append "inter-network control (6)"
+		    Options_TOS_Array.Append "network control (7)"
+		    
+		    // Load PopUpMenu
+		    for i as integer = 0 to UBound(Options_TOS_Array)
+		      TOS_PopUpMenu.AddRow (Options_TOS_Array(i))
+		    Next i
+		    
+		  End If
+		End Sub
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h21
+		Private Options_DSCP_Array() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private Options_Precedence_Array() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private Options_TOS_Array() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		UDPProtocolPortArray() As String
+	#tag EndProperty
+
+
+#tag EndWindowCode
+
+#tag Events DSCP_PopUpMenu
+	#tag Event
+		Sub Change()
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.mContinueButtonShowOrHide
+		  
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    // Send to Function to Return only Port number
+		    Dim QOSValue as String = fConvertToProperQOSValues(Me.Text)
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_QOS_DSCP_Value = QOSValue
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events QOS_OptionsPopUpMenu
+	#tag Event
+		Sub Change()
+		  if Me.Text = "" Then
+		    TOS_PopUpMenu.Enabled = False
+		    TOS_PopUpMenu.ListIndex = 0
+		    Precedence_PopUpMenu.Enabled  = False
+		    Precedence_PopUpMenu.ListIndex = 0
+		    DSCP_PopUpMenu.Enabled = False
+		    DSCP_PopUpMenu.ListIndex = 0
+		    
+		  Elseif Me.Text = "dscp" Then
+		    // Hide Other Controls First
+		    TOS_PopUpMenu.Enabled = False
+		    TOS_PopUpMenu.Visible = False
+		    TOS_Choice_Label.Visible = False
+		    Precedence_PopUpMenu.Visible = False
+		    Precedence_PopUpMenu.Enabled = False
+		    Prec_Choice_Label.Visible = False
+		    
+		    // Show this Control
+		    mCreate_DSCP_Array
+		    DSCP_PopUpMenu.Enabled = True
+		    DSCP_PopUpMenu.Visible = True
+		    DSCP_Choice_Label.Visible = True
+		    
+		  Elseif me.Text = "precedence" Then
+		    // Hide Other Controls First
+		    DSCP_PopUpMenu.Enabled = False
+		    DSCP_PopUpMenu.Visible = False
+		    DSCP_Choice_Label.Visible = False
+		    TOS_PopUpMenu.Enabled = False
+		    TOS_PopUpMenu.Visible = False
+		    TOS_Choice_Label.Visible = False
+		    
+		    // Show this Control
+		    mCreate_Precedence_Array
+		    Precedence_PopUpMenu.Visible = True
+		    Precedence_PopUpMenu.Enabled = True
+		    Prec_Choice_Label.Visible = True
+		    
+		  Elseif me.Text = "tos" Then
+		    // Hide Other Controls First
+		    DSCP_PopUpMenu.Enabled = False
+		    DSCP_PopUpMenu.Visible = False
+		    DSCP_Choice_Label.Visible = False
+		    Precedence_PopUpMenu.Visible = False
+		    Precedence_PopUpMenu.Enabled = False
+		    Prec_Choice_Label.Visible = False
+		    
+		    // Show this Control
+		    mCreate_TOS_Array
+		    TOS_PopUpMenu.Enabled = True
+		    TOS_PopUpMenu.Visible = True
+		    TOS_Choice_Label.Visible = True
+		  end if
+		  
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.mContinueButtonShowOrHide
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  me.AddRow ""
+		  me.AddRow "dscp"
+		  me.AddRow "precedence"
+		  me.AddRow "tos"
+		  me.ListIndex = 0
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_QOS_Type = Self.QOS_OptionsPopUpMenu.Text
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events LogInput_CheckBox
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_Checkmark_LogInput_Set = Self.LogInput_CheckBox.Value
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Fragments_CheckBox
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_Checkmark_Fragments_Set= Self.Fragments_CheckBox.Value
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Precedence_PopUpMenu
+	#tag Event
+		Sub Change()
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.mContinueButtonShowOrHide
+		  
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    Dim QOSValue as String = fConvertToProperQOSValues(Me.Text)
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_QOS_Prec_Value = QOSValue
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TOS_PopUpMenu
+	#tag Event
+		Sub Change()
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.mContinueButtonShowOrHide
+		  
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    Dim QOSValue as String = fConvertToProperQOSValues(Me.Text)
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_QOS_TOS_Value = QOSValue
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TimeRange_CheckBox
+	#tag Event
+		Sub Action()
+		  if me.Value = True Then
+		    // Checked
+		    TimeRange_TextField.Enabled = True
+		    TimeRange_TextField.SetFocus
+		  Elseif me.Value = False Then
+		    // Not Checked
+		    TimeRange_TextField.Enabled = False
+		    
+		  End if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_TimeRange_Set = Self.TimeRange_CheckBox.Value
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TimeRange_TextField
+	#tag Event
+		Sub MouseExit()
+		  if UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array) <> -1 Then
+		    CiscoACLWizardWindow.IPExtendedACL_Storage_Array(CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CentralCounter).OPTIONS_IP_TimeRange_Name = Self.TimeRange_TextField.Text
+		  End if
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.AutoSaved_Canvas.Visible = True
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag ViewBehavior
+	#tag ViewProperty
+		Name="AcceptFocus"
+		Visible=true
+		Group="Behavior"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="AcceptTabs"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="AutoDeactivate"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackColor"
+		Visible=true
+		Group="Appearance"
+		InitialValue="&hFFFFFF"
+		Type="Color"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Backdrop"
+		Visible=true
+		Group="Appearance"
+		Type="Picture"
+		EditorType="Picture"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Enabled"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="EraseBackground"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasBackColor"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Position"
+		InitialValue="300"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HelpTag"
+		Visible=true
+		Group="Appearance"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="InitialParent"
+		Group="Position"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Left"
+		Visible=true
+		Group="Position"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockBottom"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockLeft"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockRight"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockTop"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="TabIndex"
+		Visible=true
+		Group="Position"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="TabPanelIndex"
+		Group="Position"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="TabStop"
+		Visible=true
+		Group="Position"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Top"
+		Visible=true
+		Group="Position"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Transparent"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="UseFocusRing"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Visible"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Position"
+		InitialValue="300"
+		Type="Integer"
+	#tag EndViewProperty
+#tag EndViewBehavior

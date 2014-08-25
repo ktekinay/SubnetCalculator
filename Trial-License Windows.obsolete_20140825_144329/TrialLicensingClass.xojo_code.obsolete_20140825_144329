@@ -1,0 +1,581 @@
+#tag Class
+Protected Class TrialLicensingClass
+	#tag Method, Flags = &h21
+		Private Function fCompareDates(inOriginalInstallDate_Date as Date) As Integer
+		  #IF TargetWin32 Then
+		    // Compare inOriginalInstallDate_Date as Date with Todays Date
+		    Dim diff as Double = 86400*15
+		    Dim TodaysDate as New Date
+		    Dim NumberOfTSRemaining as New Date
+		    Dim DaysRemainingForTrial as Double
+		    Dim ExpirationDate as New Date
+		    
+		    ExpirationDate.TotalSeconds =  inOriginalInstallDate_Date.TotalSeconds+diff
+		    
+		    NumberOfTSRemaining.TotalSeconds = ExpirationDate.TotalSeconds - TodaysDate.TotalSeconds
+		    
+		    // Set anything less than 0 to 0 (Days Past the expiration date)
+		    If NumberOfTSRemaining.TotalSeconds <= 0 Then
+		      DaysRemainingForTrial = 0
+		    Else
+		      DaysRemainingForTrial = Round(NumberOfTSRemaining.TotalSeconds/86400)
+		    End if
+		    
+		    Return DaysRemainingForTrial
+		  #ENDIF
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function fConvertDateString2Date(inOriginalInstallDateString as string) As Date
+		  #IF TargetWin32 Then
+		    dim OriginalInstallDateStringConvertedToDate as new date
+		    
+		    if ParseDate(inOriginalInstallDateString,OriginalInstallDateStringConvertedToDate) = False then
+		      OriginalInstallDateStringConvertedToDate =nil
+		    End if
+		    
+		    
+		    return OriginalInstallDateStringConvertedToDate
+		  #ENDIF
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fCreateRandomProductID() As String
+		  #IF TargetWin32 Then
+		    // Create Random Product "ID" during Successful Entry of PAK
+		    
+		    Dim RandomAlpha1 as New Random
+		    Dim RandomAlphaString1 as String
+		    Dim RandomAlphaString2 as String
+		    For i as integer = 0 to 4
+		      Dim RAN as Integer = RandomAlpha1.InRange(65,90)
+		      RandomAlphaString1 = RandomAlphaString1  + Str(Chr(RAN))
+		    Next i
+		    
+		    For i as integer = 0 to 4
+		      Dim RAN as Integer = RandomAlpha1.InRange(65,90)
+		      RandomAlphaString2 = RandomAlphaString2  + Str(Chr(RAN))
+		    Next i
+		    
+		    dim a as string
+		    
+		    
+		    // Create Random ID portion
+		    Dim Randomizer1 as New Random
+		    Dim Randomizer2 as New Random
+		    Dim RandomID1 as Integer = Randomizer1.InRange(0,99999)
+		    Dim RandomID2 as Integer = Randomizer2.InRange(0,99999)
+		    
+		    Dim FinalString as String = RandomAlphaString1+"-"+Str(RandomID1)+"-"+RandomAlphaString2+"-"+Str(RandomID2)
+		    Return FinalString
+		  #ENDIF
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fParseLicenseFile(LicenseFileContents as String) As String
+		  #IF TargetWin32 Then
+		    Dim LicenseFileContent_RegEx as RegEx
+		    Dim LicenseFileContent_RegExMatch as RegExMatch
+		    Dim LicenseFileContent_Value as String
+		    LicenseFileContent_RegEx = New RegEx
+		    LicenseFileContent_RegEx.Options.Greedy = False
+		    LicenseFileContent_RegEx.Options.caseSensitive = false
+		    LicenseFileContent_RegEx.SearchPattern = "(?<=LicenseStatus=).+(?=;)"
+		    LicenseFileContent_RegExMatch = LicenseFileContent_RegEx.Search(LicenseFileContents)
+		    if LicenseFileContent_RegExMatch <> nil then
+		      LicenseFileContent_Value = LicenseFileContent_RegExMatch.SubExpressionString(0)
+		    end if
+		    
+		    Dim LicRegisteredTo_RegEx as RegEx
+		    Dim LicRegisteredTo_RegExMatch as RegExMatch
+		    Dim LicRegisteredTo_Value as String
+		    LicRegisteredTo_RegEx = New RegEx
+		    LicRegisteredTo_RegEx.Options.Greedy = False
+		    LicRegisteredTo_RegEx.Options.caseSensitive = false
+		    LicRegisteredTo_RegEx.SearchPattern = "(?<=RegisteredTo=).+(?=;)"
+		    LicRegisteredTo_RegExMatch = LicRegisteredTo_RegEx.Search(LicenseFileContents)
+		    if LicRegisteredTo_RegExMatch <> nil then
+		      LicRegisteredTo_Value = LicRegisteredTo_RegExMatch.SubExpressionString(0)
+		    end if
+		    
+		    // Map to Class Class Variable
+		    LicenseRegisteredToUsername = LicRegisteredTo_Value
+		    
+		    Dim OrigInstalledDate_RegEx as RegEx
+		    Dim OrigInstalledDate_RegExMatch as RegExMatch
+		    Dim OrigInstalledDate_Value as String
+		    OrigInstalledDate_RegEx = New RegEx
+		    OrigInstalledDate_RegEx.Options.Greedy = False
+		    OrigInstalledDate_RegEx.Options.caseSensitive = false
+		    OrigInstalledDate_RegEx.SearchPattern = "(?<=RegisteredTo=).+(?=;)"
+		    OrigInstalledDate_RegExMatch = OrigInstalledDate_RegEx.Search(LicenseFileContents)
+		    if OrigInstalledDate_RegExMatch <> nil then
+		      OrigInstalledDate_Value = OrigInstalledDate_RegExMatch.SubExpressionString(0)
+		    end if
+		    // Map to Original Installation Date Class Variable
+		    OriginalInstallationDateString = OrigInstalledDate_Value
+		    
+		    
+		    /// Get Purchased Product ID From License File
+		    Dim ProductID_RegEx as RegEx
+		    Dim ProductID_RegExMatch as RegExMatch
+		    Dim ProductID_Value as String
+		    ProductID_RegEx = New RegEx
+		    ProductID_RegEx.Options.Greedy = False
+		    ProductID_RegEx.Options.caseSensitive = false
+		    ProductID_RegEx.SearchPattern = "(?<=ProductID=).+(?=;)"
+		    ProductID_RegExMatch = ProductID_RegEx.Search(LicenseFileContents)
+		    if ProductID_RegExMatch <> nil then
+		      ProductID_Value = ProductID_RegExMatch.SubExpressionString(0)
+		    end if
+		    
+		    ProductID_RND = ProductID_Value
+		    
+		    // Return the License File Status
+		    Return LicenseFileContent_Value
+		  #ENDIF
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function fParseOriginalInstallDate_LicenseFile(LicenseFileContents as String) As String
+		  #IF TargetWin32 Then
+		    Dim OrigInstalledDate_RegEx as RegEx
+		    Dim OrigInstalledDate_RegExMatch as RegExMatch
+		    Dim OrigInstalledDate_Value as String
+		    OrigInstalledDate_RegEx = New RegEx
+		    OrigInstalledDate_RegEx.Options.Greedy = False
+		    OrigInstalledDate_RegEx.Options.caseSensitive = false
+		    OrigInstalledDate_RegEx.SearchPattern = "(?<=InstDte=).+(?=;)"
+		    OrigInstalledDate_RegExMatch = OrigInstalledDate_RegEx.Search(LicenseFileContents)
+		    if OrigInstalledDate_RegExMatch <> nil then
+		      OrigInstalledDate_Value = OrigInstalledDate_RegExMatch.SubExpressionString(0)
+		    end if
+		    
+		    // Return the License File Status
+		    Return OrigInstalledDate_Value
+		  #ENDIF
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function fReadLicenseFile() As String
+		  #IF TargetWin32 Then
+		    Dim LicenseFolder As FolderItem
+		    Dim TIS as TextInputStream
+		    Dim TOS as TextOutputStream
+		    Dim ParsedLicenseFileStatus as String
+		    
+		    LicenseFolder = SpecialFolder.Temporary
+		    
+		    if LicenseFolder.Exists =True then
+		      //  Check to see if File Exists
+		      LicenseFolder = LicenseFolder.Child("iscmwclf")
+		      If LicenseFolder.Exists = False Then
+		        // File does not exist - Create file
+		        mCreateLicenseFileFormat(TOS,LicenseFolder)
+		      End if
+		      
+		      // File is present - Read it
+		      Dim LicenseFileContents as String
+		      TIS = TextInputStream.Open(LicenseFolder)
+		      LicenseFileContents = TIS.ReadAll
+		      ParsedLicenseFileStatus = fParseLicenseFile(LicenseFileContents)
+		    End if
+		    
+		    TIS.Close
+		    
+		    Return ParsedLicenseFileStatus
+		    
+		  #ENDIF
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function fReadOriginalInstallDate_LicenseFile() As String
+		  Dim OriginalInstallDateFolder As FolderItem
+		  Dim TIS as TextInputStream
+		  Dim TOS as TextOutputStream
+		  Dim ParsedOriginalInstallDateString as String
+		  
+		  #IF TargetWin32 Then
+		    OriginalInstallDateFolder = SpecialFolder.Temporary
+		    
+		    if OriginalInstallDateFolder.Exists =True then
+		      //  Check to see if File Exists
+		      OriginalInstallDateFolder = OriginalInstallDateFolder.Child("dtiscmwclf")
+		      If OriginalInstallDateFolder.Exists = False Then
+		        // File does not exist - Create file
+		        mCreateOriginalInstallDateFileFormat(TOS,OriginalInstallDateFolder)
+		      End if
+		      
+		      // File is present - Read it
+		      Dim OriginalInstallDateContents as String
+		      TIS = TextInputStream.Open(OriginalInstallDateFolder)
+		      OriginalInstallDateContents = TIS.ReadAll
+		      ParsedOriginalInstallDateString = fParseOriginalInstallDate_LicenseFile(OriginalInstallDateContents)
+		    End if
+		    
+		    TIS.Close
+		    
+		    Return ParsedOriginalInstallDateString
+		    
+		  #ENDIF
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function fValidation(inUsersPSK as String, InUserRegistrationName as String) As Boolean
+		  #IF TargetWin32 Then
+		    // First Create Strong Hash to Compare with User Input
+		    Dim OurStrongHash, UsersStrongHash As String
+		    Dim OurSalt, UsersSalt as String
+		    Dim OurPSK, UsersPSK as String
+		    
+		    OurSalt = "lMobrAvX7uyqrYhAyxftojqSBhbqFhdZ"
+		    OurPSK = "wXtPXrXWiyhdDgelqrKxcZsMuRcsfCqw"
+		    OurStrongHash = Crypto.PBKDF2(OurSalt, OurPSK, 100000, 32, Crypto.Algorithm.SHA512)
+		    
+		    UsersSalt = "lMobrAvX7uyqrYhAyxftojqSBhbqFhdZ"
+		    UsersPSK = inUsersPSK
+		    UsersStrongHash =  Crypto.PBKDF2(UsersSalt, UsersPSK, 100000, 32, Crypto.Algorithm.SHA512)
+		    LicenseRegisteredToUsername = InUserRegistrationName
+		    
+		    // Now Compare Against User's Encrypted Hash:
+		    Dim CompareHashStrings as Integer = StrComp(UsersStrongHash,OurStrongHash,1)
+		    if CompareHashStrings = 0 Then
+		      // Successful Product Key (Purchased)
+		      // Generate Fake Product ID to prevent copy/paste
+		      ProductID_RND = fCreateRandomProductID
+		      TrialMode = False
+		      mWritePurchasedLicenseFile
+		      mChangeToPurchasedVersion
+		      App.mShowPurchasedMenuBarItems
+		      Return true
+		    else
+		      // Wrong Product Key! (Trial)
+		      TrialMode = True
+		      Return false
+		    end if
+		  #ENDIF
+		  
+		  
+		  
+		  
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mChangeToPurchasedVersion()
+		  #IF TargetWin32 Then
+		    MainWindow.Title = "Intelligent Subnet Calculator"
+		    MainWindow.Trial_CountdownTimer.Mode = Timer.ModeOff
+		    MainWindow.App_Trial_Countdown_Bubble.Visible = False
+		  #ENDIF
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mCreateLicenseFileFormat(TOS as TextOutputStream, LicenseFolder as FolderItem)
+		  #IF TargetWin32 Then
+		    TOS = TextOutputStream.Create(LicenseFolder)
+		    TOS.Write("LicenseStatus=Trial;" + EndOfLine)
+		    TOS.Write("RegisteredTo=;" + EndOfLine)
+		    
+		    #If TargetWin32 Then
+		      TOS.Write("ProductID=;"+EndOfLine)
+		    #EndIf
+		    
+		    TOS.Close
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mCreateOriginalInstallDateFileFormat(TOS as TextOutputStream, inInstallDateFolder as FolderItem)
+		  #IF TargetWin32 Then
+		    TOS = TextOutputStream.Create(inInstallDateFolder)
+		    TOS.Write("InstDte=;" + EndOfLine)
+		    TOS.Close
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mDateCountDownCalc(inOriginalInstallDateStr as String)
+		  #IF TargetWin32 Then
+		    If inOriginalInstallDateStr = "" Then
+		      // If the Original Install File is empty (First Run)Then write this date
+		      mWriteOriginalInstallationDate
+		      
+		    ElseIf inOriginalInstallDateStr <> "" Then
+		      // Not First Run so don't write Install Date
+		      // Convert the
+		      Dim OriginalInstallationDate_Date as Date = fConvertDateString2Date(inOriginalInstallDateStr)
+		      NumberOfDaysLeftForTrial = fCompareDates(OriginalInstallationDate_Date)
+		    End if
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mShowNagModalDialog_Purchase()
+		  #IF TargetWin32 Then
+		    Dim SessionCompleteDialog as New MessageDialog
+		    Dim SessionCompleteDialogButton as MessageDialogButton
+		    SessionCompleteDialog.icon=MessageDialog.GraphicNote
+		    SessionCompleteDialog.ActionButton.Caption="Purchase"
+		    SessionCompleteDialog.CancelButton.Visible=True
+		    SessionCompleteDialog.CancelButton.Caption = "Cancel"
+		    SessionCompleteDialog.AlternateActionButton.Visible=False
+		    //SessionCompleteDialog.AlternateActionButton.Caption="Purchase"
+		    SessionCompleteDialog.Message="Purchase Intelligent Subnet Calculator" + EndOfLine + EndOfLine +"Please click on the purchase button below to visit our online store."
+		    SessionCompleteDialogButton=SessionCompleteDialog.ShowModal
+		    
+		    Select Case SessionCompleteDialogButton
+		    Case SessionCompleteDialog.ActionButton
+		      Dim HTTPCMD as New Shell
+		      HTTPCMD.Execute("""C:\Program Files\Internet Explorer\iexplore.exe"" http://www.intelligentsubnetcalculator.com/purchase")
+		    End select
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mShowNagModalDialog_SessionEnd()
+		  #IF TargetWin32 Then
+		    Dim SessionCompleteDialog as New MessageDialog
+		    Dim SessionCompleteDialogButton as MessageDialogButton
+		    SessionCompleteDialog.icon=MessageDialog.GraphicNote
+		    SessionCompleteDialog.ActionButton.Caption="Question?"
+		    SessionCompleteDialog.CancelButton.Visible=False
+		    SessionCompleteDialog.AlternateActionButton.Visible=True
+		    SessionCompleteDialog.AlternateActionButton.Caption="Purchase"
+		    SessionCompleteDialog.Message="Trial Session Time Limit Reached"+EndOfLine+EndOfLine+"Thank you for trying Intelligent Subnet Calculator"
+		    SessionCompleteDialogButton=SessionCompleteDialog.ShowModal
+		    
+		    Select Case SessionCompleteDialogButton
+		    Case SessionCompleteDialog.ActionButton
+		      //user pressed "Contact Us"
+		      Dim EmailCMD as New Shell
+		      MsgBox "Please email us at:" + EndOfLine + EndOfLine +"info@intelligentvisibility.com"
+		      
+		    Case SessionCompleteDialog.AlternateActionButton
+		      Dim HTTPCMD as New Shell
+		      HTTPCMD.Execute("""C:\Program Files\Internet Explorer\iexplore.exe"" http://www.intelligentsubnetcalculator.com")
+		    End select
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mShowNagModalDialog_TrialExpired()
+		  #IF TargetWin32 Then
+		    Dim SessionCompleteDialog as New MessageDialog
+		    Dim SessionCompleteDialogButton as MessageDialogButton
+		    SessionCompleteDialog.icon=MessageDialog.GraphicNote
+		    SessionCompleteDialog.ActionButton.Caption="Question?"
+		    SessionCompleteDialog.CancelButton.Visible=False
+		    //SessionCompleteDialog.CancelButton.Caption = "Close"
+		    SessionCompleteDialog.AlternateActionButton.Visible=True
+		    SessionCompleteDialog.AlternateActionButton.Caption="Purchase"
+		    SessionCompleteDialog.Message="Trial Expired" + EndOfLine + EndOfLine +"Thank you for trying Intelligent Subnet Calculator"
+		    SessionCompleteDialogButton=SessionCompleteDialog.ShowModal
+		    
+		    Select Case SessionCompleteDialogButton
+		    Case SessionCompleteDialog.ActionButton
+		      //user pressed "Contact Us"
+		      Dim EmailCMD as New Shell
+		      MsgBox "Please email us at:" + EndOfLine + EndOfLine +"info@intelligentvisibility.com"
+		      
+		    Case SessionCompleteDialog.AlternateActionButton
+		      Dim HTTPCMD as New Shell
+		      HTTPCMD.Execute("""C:\Program Files\Internet Explorer\iexplore.exe"" http://www.intelligentsubnetcalculator.com/purchase")
+		    End select
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mWriteOriginalInstallationDate()
+		  #IF TargetWin32 Then
+		    // Create Installation Date
+		    Dim InstDate as New Date
+		    OriginalInstallationDateString = InstDate.ShortDate // Short Format: 4/1/14
+		    
+		    Dim LicenseFolder, LicenseFolder_Out As FolderItem
+		    Dim TOS as TextOutputStream
+		    LicenseFolder = SpecialFolder.Temporary
+		    
+		    if LicenseFolder.Exists =True then
+		      //  Check to see if File Exists
+		      LicenseFolder = LicenseFolder.Child("dtiscmwclf")
+		      If LicenseFolder.Exists = False Then
+		        // File does not exist Abandon
+		        Return
+		      End if
+		      
+		      // File is present - Write to it
+		      TOS = TextOutputStream.Create(LicenseFolder)
+		      TOS.Write("InstDte="+OriginalInstallationDateString+";"+EndOfLine)
+		      TOS.Close
+		    End if
+		  #ENDIF
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mWritePurchasedLicenseFile()
+		  #IF TargetWin32 Then
+		    Dim LicenseFolder, LicenseFolder_Out As FolderItem
+		    Dim TOS as TextOutputStream
+		    LicenseFolder = SpecialFolder.Temporary
+		    
+		    if LicenseFolder.Exists =True then
+		      //  Check to see if File Exists
+		      LicenseFolder = LicenseFolder.Child("iscmwclf")
+		      If LicenseFolder.Exists = False Then
+		        // File does not exist Abandon
+		        Return
+		      End if
+		      
+		      // File is present - Write to it
+		      TOS = TextOutputStream.Create(LicenseFolder)
+		      TOS.Write("LicenseStatus=Purchased;"+EndOfLine)
+		      TOS.Write("RegisteredTo="+LicenseRegisteredToUsername+";"+EndOfLine)
+		      TOS.Write("ProductID="+ProductID_RND+";"+EndOfLine)
+		      TOS.Close
+		    End if
+		  #ENDIF
+		End Sub
+	#tag EndMethod
+
+
+	#tag Note, Name = License
+		Using following 3 2Byte Salt:
+		4-2-14:    lMobrAvX7uyqrYhAyxftojqSBhbqFhdZ
+		
+		Using following 3 2Byte PSK: 
+		4-2-14:    wXtPXrXWiyhdDgelqrKxcZsMuRcsfCqw
+	#tag EndNote
+
+
+	#tag Property, Flags = &h0
+		LicenseRegisteredToUsername As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		#tag Note
+			// 15 days for a Trial
+		#tag EndNote
+		NumberOfDaysLeftForTrial As Integer = 15
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		OriginalInstallationDateString As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		ProductID_RND As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		#tag Note
+			// 3 Minutes = 180 Seconds
+			
+			// 15 Minutes = 900 seconds
+			
+			// 30 Minutes = 1800 seconds
+		#tag EndNote
+		Session_Timer_TimeLimit_Seconds As Integer = 1800
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		TrialMode As Boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private Trial_MaxNumOfDays_Length As Integer = 15
+	#tag EndProperty
+
+
+	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Left"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="LicenseRegisteredToUsername"
+			Group="Behavior"
+			Type="String"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="NumberOfDaysLeftForTrial"
+			Group="Behavior"
+			InitialValue="15"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="OriginalInstallationDateString"
+			Group="Behavior"
+			Type="String"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="ProductID_RND"
+			Group="Behavior"
+			Type="String"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Session_Timer_TimeLimit_Seconds"
+			Group="Behavior"
+			InitialValue="1800"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Top"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="TrialMode"
+			Group="Behavior"
+			InitialValue="True"
+			Type="Boolean"
+		#tag EndViewProperty
+	#tag EndViewBehavior
+End Class
+#tag EndClass

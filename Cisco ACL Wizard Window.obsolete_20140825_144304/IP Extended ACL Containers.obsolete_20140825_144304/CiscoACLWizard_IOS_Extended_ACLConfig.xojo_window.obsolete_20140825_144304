@@ -1,0 +1,2409 @@
+#tag Window
+Begin ContainerControl CiscoACLWizard_IOS_Extended_ACLConfig
+   AcceptFocus     =   False
+   AcceptTabs      =   True
+   AutoDeactivate  =   True
+   BackColor       =   &cFFFFFF00
+   Backdrop        =   0
+   Compatibility   =   ""
+   Enabled         =   True
+   EraseBackground =   True
+   HasBackColor    =   False
+   Height          =   636
+   HelpTag         =   ""
+   InitialParent   =   ""
+   Left            =   0
+   LockBottom      =   False
+   LockLeft        =   False
+   LockRight       =   False
+   LockTop         =   False
+   TabIndex        =   0
+   TabPanelIndex   =   0
+   TabStop         =   True
+   Top             =   0
+   Transparent     =   True
+   UseFocusRing    =   False
+   Visible         =   True
+   Width           =   634
+   Begin PushButton CloseButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Finished"
+      Default         =   False
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   555
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   605
+      Underline       =   False
+      Visible         =   True
+      Width           =   68
+   End
+   Begin Label validatetitleLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   True
+      Left            =   11
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Finalize Access List Configuration"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   16.0
+      TextUnit        =   0
+      Top             =   12
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   374
+   End
+   Begin Canvas ACL_ApplierHelper_Canvas
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   157
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   22
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   41
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   634
+      Begin Label InterfaceTypeChooserLabel
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Interface Type:"
+         TextAlign       =   0
+         TextColor       =   &c00000000
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   95
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   True
+         Width           =   130
+      End
+      Begin PopupMenu ChooseIntTypePopupMenu
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   10
+         ListIndex       =   0
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   False
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   117
+         Underline       =   False
+         Visible         =   True
+         Width           =   180
+      End
+      Begin Label InterfaceNumChooserLabel
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   3
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Interface Number:"
+         TextAlign       =   0
+         TextColor       =   &c00000000
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   144
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   True
+         Width           =   140
+      End
+      Begin Label InterfaceDirectionChoose_Label
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   5
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Direction Into Interface:"
+         TextAlign       =   0
+         TextColor       =   &c00000000
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   45
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   True
+         Width           =   179
+      End
+      Begin PopupMenu ChooseIntDirectionPopupMenu
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   "Choose direction that you want to apply ACL"
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   10
+         ListIndex       =   0
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   False
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   67
+         Underline       =   False
+         Visible         =   True
+         Width           =   180
+      End
+      Begin Label InterfaceDataLabel
+         AutoDeactivate  =   True
+         Bold            =   True
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         Italic          =   False
+         Left            =   290
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   7
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   ""
+         TextAlign       =   2
+         TextColor       =   &c1E731100
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   153
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   True
+         Width           =   168
+      End
+      Begin Label VTYFirstInterfaceNumChooserLabel
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   "You may enter the first number of the VTY line range OR you may only enter the single desired VTY line."
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         Italic          =   False
+         Left            =   10
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   8
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   ""
+         TextAlign       =   0
+         TextColor       =   &c00000000
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   144
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   False
+         Width           =   140
+      End
+      Begin Label VTYLastInterfaceNumChooserLabel
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   "OPTIONAL: You may enter the last number of the VTY line range. If you leave this blank then a VTY line range will NOT be used."
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         Italic          =   False
+         Left            =   120
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   9
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   ""
+         TextAlign       =   0
+         TextColor       =   &c00000000
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   144
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   False
+         Width           =   140
+      End
+      Begin PopupMenu VTY_StartRange_PopUpMenu
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   False
+         Height          =   20
+         HelpTag         =   "You may enter the first number of the VTY line range OR you may only enter the single desired VTY line."
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   10
+         ListIndex       =   0
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   10
+         TabPanelIndex   =   0
+         TabStop         =   False
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   166
+         Underline       =   False
+         Visible         =   False
+         Width           =   70
+      End
+      Begin PopupMenu VTY_LastRange_PopUpMenu
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   False
+         Height          =   20
+         HelpTag         =   "OPTIONAL: You may enter the last number of the VTY line range. If you leave this blank then a VTY line range will NOT be used."
+         Index           =   -2147483648
+         InitialParent   =   "ACL_ApplierHelper_Canvas"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   120
+         ListIndex       =   0
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   11
+         TabPanelIndex   =   0
+         TabStop         =   False
+         TextFont        =   "Helvetica"
+         TextSize        =   12.0
+         TextUnit        =   0
+         Top             =   166
+         Underline       =   False
+         Visible         =   False
+         Width           =   70
+      End
+   End
+   Begin Separator Separator3
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   5
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   27
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   593
+      Visible         =   True
+      Width           =   634
+   End
+   Begin Separator Separator1
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   5
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   28
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   39
+      Visible         =   True
+      Width           =   634
+   End
+   Begin Separator Separator2
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   5
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   24
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   195
+      Visible         =   True
+      Width           =   634
+   End
+   Begin TextArea ACL_Configuration_TextArea
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &c00000000
+      Bold            =   False
+      Border          =   True
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   241
+      HelpTag         =   ""
+      HideSelection   =   True
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   11
+      LimitText       =   0
+      LineHeight      =   0.0
+      LineSpacing     =   1.0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Multiline       =   True
+      ReadOnly        =   True
+      Scope           =   0
+      ScrollbarHorizontal=   False
+      ScrollbarVertical=   True
+      Styled          =   True
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00FF0000
+      TextFont        =   "Terminal"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   226
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   613
+   End
+   Begin TextArea ACL_InterfaceConfig_TextArea
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &c08020200
+      Bold            =   False
+      Border          =   True
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   96
+      HelpTag         =   ""
+      HideSelection   =   True
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   11
+      LimitText       =   0
+      LineHeight      =   0.0
+      LineSpacing     =   1.0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Multiline       =   True
+      ReadOnly        =   True
+      Scope           =   0
+      ScrollbarHorizontal=   False
+      ScrollbarVertical=   True
+      Styled          =   True
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00FFFF00
+      TextFont        =   "Terminal"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   495
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   613
+   End
+   Begin Label CopyConfigGlobalLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   8
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   25
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Global Configuration for Access-List:"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   202
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   252
+   End
+   Begin Label CopyConfigInterfaceLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   8
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   26
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Interface Configuration for Access-List:"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   471
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   255
+   End
+   Begin PushButton BackButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Back"
+      Default         =   False
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   492
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   29
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   605
+      Underline       =   False
+      Visible         =   True
+      Width           =   56
+   End
+   Begin ComboBox ChooseIntNumberCombobox
+      AutoComplete    =   True
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   10
+      ListIndex       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   30
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "Helvetica"
+      TextSize        =   12.0
+      TextUnit        =   0
+      Top             =   166
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   178
+   End
+   Begin Label PageCounterLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   14
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   31
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "3 of 3"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "Helvetica"
+      TextSize        =   11.0
+      TextUnit        =   0
+      Top             =   609
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   60
+   End
+   Begin Canvas PrintButtonRectangle
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   24
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   601
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   33
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   10
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   24
+      Begin Canvas PrintButton
+         AcceptFocus     =   False
+         AcceptTabs      =   False
+         AutoDeactivate  =   True
+         Backdrop        =   0
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         Height          =   18
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "PrintButtonRectangle"
+         Left            =   604
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Top             =   13
+         Transparent     =   True
+         UseFocusRing    =   True
+         Visible         =   True
+         Width           =   18
+      End
+   End
+   Begin Canvas SaveButtonRectangle
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   24
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   578
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   35
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   10
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   24
+      Begin Canvas SaveButton
+         AcceptFocus     =   False
+         AcceptTabs      =   False
+         AutoDeactivate  =   True
+         Backdrop        =   0
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         Height          =   16
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "SaveButtonRectangle"
+         Left            =   582
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Top             =   14
+         Transparent     =   True
+         UseFocusRing    =   True
+         Visible         =   True
+         Width           =   16
+      End
+   End
+End
+#tag EndWindow
+
+#tag WindowCode
+	#tag Method, Flags = &h0
+		Function fGenerate_ACL_CLI_Configuration(ACLStorageClassArrayIndex as Integer) As String
+		  /// SET VARIABLES SECTION
+		  Dim acl_numVAR, decisionVAR, source_typeVAR, dest_typeVAR, ip_protocolVAR As String
+		  Dim qos_typeVAR, qos_valueVAR, timerange_nameVAR, igmp_msgtypeVAR, icmp_msgtypeVAR As String
+		  
+		  Dim tcp_establishedVAR, tcp_ack, tcp_syn, tcp_push, tcp_reset, tcp_fragments, tcp_fin, tcp_urgent As String
+		  Dim fragmentsVAR as String
+		  Dim UseTimeRange, UseQOS, UseLOG As Boolean = False
+		  Dim UseSrc_PortFilter, UseDestPortFilter As Boolean = False
+		  Dim src_addressVAR, src_wildcardVAR, src_portfilter_opVAR, src_range_startVAR, src_range_endVAR As String
+		  Dim dest_addressVAR, dest_wildcardVAR, dest_portfilter_opVAR, dest_range_startVAR, dest_range_endVAR As String
+		  Dim logVAR as String
+		  
+		  //////////////////////////////////////////////////////
+		  // LOAD VARIABLES SECTION //
+		  /////////////////////////////////////////////////////
+		  // Load ACL Number
+		  acl_numVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(0).Global_ACL_Number+" "
+		  
+		  // Load Decision :: Permit or Deny
+		  If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Global_ACL_Decision = "permit" Then
+		    decisionVAR = "permit "
+		  Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Global_ACL_Decision = "deny" Then
+		    decisionVAR = "deny "
+		  End If
+		  
+		  // Decide on Which Log Matches to Use
+		  If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Global_Log_Match = "Yes" Then
+		    UseLOG = True
+		    logVAR = "log "
+		  End if
+		  
+		  // Load Source Type (If we have a Subnet Then just use the IP Address/Hostname without prefix)
+		  If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Type = "Any" Then
+		    source_typeVAR = "any "
+		  Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Type = "Host" Then
+		    source_typeVAR = "host "
+		  Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Type = "Subnet" Then
+		    source_typeVAR = "subnet "
+		  End If
+		  
+		  src_addressVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Address + " "
+		  src_wildcardVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_WildcardMask+ " "
+		  src_range_startVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Range_Start_Port+ " "
+		  src_range_endVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Range_End_Port+ " "
+		  
+		  dest_addressVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Address + " "
+		  dest_wildcardVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_WildcardMask+ " "
+		  dest_range_startVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Range_Start_Port+ " "
+		  dest_range_endVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Range_End_Port+ " "
+		  
+		  
+		  // Do we use Source Port Filter?
+		  If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Port_Filter_Operator <> "" Then
+		    src_portfilter_opVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Source_Port_Filter_Operator + " "
+		    UseSrc_PortFilter = True
+		  End If
+		  
+		  // Do we use Destination Port Filter?
+		  If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Port_Filter_Operator <> "" Then
+		    dest_portfilter_opVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Port_Filter_Operator + " "
+		    UseDestPortFilter = True
+		  End If
+		  
+		  // Load Destination Type (If we have a Subnet Then just use the IP Address/Hostname without prefix)
+		  If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Type = "Any" Then
+		    dest_typeVAR = "any "
+		  Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Type= "Host" Then
+		    dest_typeVAR = "host "
+		  Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Destination_Type = "Subnet" Then
+		    dest_typeVAR = "subnet "
+		  End If
+		  
+		  
+		  // Determine IP Protocol Portion of the ACL
+		  Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).Global_IP_Protcol_Number
+		  Case "tcp"
+		    ip_protocolVAR = "tcp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_TimeRange_Name + " "
+		    End If
+		    
+		    // TCP Bits
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Established = True Then
+		      tcp_establishedVAR = "established "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Ack_Set = True Then
+		      tcp_ack = "ack "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Syn_Set = True Then
+		      tcp_syn = "syn "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Push_Set = True Then
+		      tcp_push = "push "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Reset_Set = True Then
+		      tcp_reset = "reset "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Fragments_Set = True Then
+		      tcp_fragments= "fragments "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Fin_Set = True Then
+		      tcp_fin = "fin "
+		      
+		    Elseif CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_TCP_Checkmark_Urgent_Set = True Then
+		      tcp_urgent = "urgent "
+		    End If
+		    
+		  Case "udp"
+		    ip_protocolVAR = "udp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_UDP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		  Case "ahp"
+		    ip_protocolVAR = "ahp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_AHP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		  Case "esp"
+		    ip_protocolVAR = "esp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_esp_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_esp_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_esp_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_esp_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_esp_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_esp_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ESP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ESP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		  Case "eigrp"
+		    ip_protocolVAR = "eigrp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_eigrp_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_eigrp_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_eigrp_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_eigrp_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_eigrp_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_eigrp_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_EIGRP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_EIGRP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		    
+		  Case "gre"
+		    ip_protocolVAR = "gre "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_gre_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_gre_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_gre_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_gre_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_gre_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_gre_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_GRE_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_GRE_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		  Case "ip"
+		    ip_protocolVAR = "ip "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ip_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ip_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ip_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ip_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ip_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ip_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		  Case "ipinip"
+		    ip_protocolVAR = "ipinip "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ipinip_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ipinip_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ipinip_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ipinip_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ipinip_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ipinip_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IPinIP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IPinIP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		    
+		  Case "ospf"
+		    ip_protocolVAR = "ospf "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ospf_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ospf_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ospf_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ospf_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ospf_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ospf_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_OSPF_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_OSPF_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		    
+		  Case "pim"
+		    ip_protocolVAR = "pim "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_pim_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_pim_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_pim_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_pim_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_pim_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_pim_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_PIM_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_PIM_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		  Case "igmp"
+		    ip_protocolVAR = "igmp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_igmp_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_igmp_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_igmp_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_igmp_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_igmp_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_igmp_TimeRange_Name + " "
+		    End If
+		    
+		    // Optional Bit Flags
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IGMP_Checkmark_LogInput_Set = True Then
+		      if UseLOG = False Then
+		        logVAR = "log-input "
+		      End if
+		    End if
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IGMP_Checkmark_Fragments_Set = True Then
+		      fragmentsVAR = "fragments "
+		    End if
+		    
+		    // Map IGMP Message Type
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IGMP_MessageType <> "" Then
+		      igmp_msgtypeVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_IGMP_MessageType + " "
+		    End if
+		    
+		    
+		  Case "icmp"
+		    ip_protocolVAR = "icmp "
+		    // Determine QOS Type First
+		    Select Case CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_icmp_QOS_Type
+		    Case ""
+		      UseQOS = False
+		    Case "dscp"
+		      UseQOS = True
+		      qos_typeVAR = "dscp "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_icmp_QOS_DSCP_Value + " "
+		    Case "precedence"
+		      UseQOS = True
+		      qos_typeVAR = "precedence "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_icmp_QOS_Prec_Value + " "
+		    Case "tos"
+		      UseQOS = True
+		      qos_typeVAR = "tos "
+		      qos_valueVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_icmp_QOS_TOS_Value + " "
+		    End Select
+		    
+		    // Do we use Time Range?
+		    If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_icmp_TimeRange_Set = True Then
+		      UseTimeRange = True
+		      timerange_nameVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_icmp_TimeRange_Name + " "
+		    End If
+		    
+		    // Map ICMP Message Type
+		    if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ICMP_MessageType <> "" Then
+		      icmp_msgtypeVAR = CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ICMP_MessageType + " "
+		    End if
+		    
+		    // Optional Bit Flags
+		    //If CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ICMP_Checkmark_LogInput_Set = True Then
+		    //if UseLOG = False Then
+		    //logVAR = "log-input "
+		    //End if
+		    //End if
+		    //if CiscoACLWizardWindow.IPExtendedACL_Storage_Array(ACLStorageClassArrayIndex).OPTIONS_ICMP_Checkmark_Fragments_Set = True Then
+		    //fragmentsVAR = "fragments "
+		    //End if
+		    
+		  End Select
+		  
+		  
+		  //////////////////////////////////////////////////
+		  // ACL Line LEG Contruction //
+		  ////////////////////////////////////////////////
+		  
+		  Dim ACLNumPermitIPProtocol_LEG as String
+		  Dim SourceAddress_LEG as String
+		  Dim SourcePort_LEG as String
+		  Dim DestinationAddress_LEG as String
+		  Dim DestinationPort_LEG as String
+		  Dim QOS_LEG as String
+		  Dim Timerange_LEG as String
+		  Dim TCP_Options_LEG as String
+		  Dim Log_LEG as String
+		  // FIRST LEG:: ACL Number, ACL Decision, IP Protocol Type Mapping
+		  ACLNumPermitIPProtocol_LEG = "access-list "+acl_numVAR+decisionVAR+ip_protocolVAR
+		  
+		  // SECOND LEG: Source Address Mapping
+		  If source_typeVAR = "any " Then
+		    SourceAddress_LEG = source_typeVAR
+		  Elseif source_typeVAR = "host " Then
+		    SourceAddress_LEG = source_typeVAR+src_addressVAR
+		  Elseif source_typeVAR = "subnet " Then
+		    SourceAddress_LEG = src_addressVAR + src_wildcardVAR
+		  End If
+		  
+		  // OPTIONAL THIRD LEG:: Source Port Mapping
+		  If UseSrc_PortFilter = True Then
+		    // Do We Use Range or Not
+		    If src_portfilter_opVAR = "range " Then
+		      SourcePort_LEG = src_portfilter_opVAR + src_range_startVAR + src_range_endVAR
+		    Else
+		      SourcePort_LEG = src_portfilter_opVAR + src_range_startVAR
+		    End If
+		    
+		  Elseif UseSrc_PortFilter = False Then
+		    // Don't use Source Port Filters
+		    
+		  End
+		  
+		  // FOURTH LEG:: Destination Address Mapping
+		  If dest_typeVAR = "any " Then
+		    DestinationAddress_LEG = dest_typeVAR
+		  Elseif dest_typeVAR = "host " Then
+		    DestinationAddress_LEG = dest_typeVAR+dest_addressVAR
+		  Elseif dest_typeVAR = "subnet " Then
+		    DestinationAddress_LEG = dest_addressVAR + dest_wildcardVAR
+		  End If
+		  
+		  // OPTIONAL FIFTH LEG:: Destination Port Mapping
+		  If UseDestPortFilter = True Then
+		    // Do We Use Range or Not
+		    If dest_portfilter_opVAR = "range " Then
+		      DestinationPort_LEG = dest_portfilter_opVAR + dest_range_startVAR + dest_range_endVAR
+		    Else
+		      DestinationPort_LEG = dest_portfilter_opVAR + dest_range_startVAR
+		    End If
+		    
+		  Elseif UseDestPortFilter = False Then
+		    // Don't use Source Port Filters
+		    
+		  End
+		  
+		  // SIXTH LEG:: IP Protocol QOS Options
+		  If UseQOS = True Then
+		    QOS_LEG = qos_typeVAR + qos_valueVAR
+		    
+		  Elseif UseQOS = False Then
+		    // Don't Use QOS
+		    
+		  End If
+		  
+		  
+		  // Seventh LEG::  Time Range
+		  if UseTimeRange = True Then
+		    Timerange_LEG = "time-range " + timerange_nameVAR + " "
+		  Elseif UseTimeRange = False Then
+		    // Don't use Time Range
+		  End if
+		  
+		  // TCP OPTIONS LEG:: Specific CheckMarks for TCP
+		  if ip_protocolVAR = "tcp " Then
+		    TCP_Options_LEG = tcp_establishedVAR + tcp_syn + tcp_push + tcp_reset + tcp_ack + tcp_fragments + tcp_fin + tcp_urgent
+		  Elseif ip_protocolVAR = "icmp" then
+		    // No Extra options
+		  End if
+		  
+		  //Remaining_Options_LEG = logVAR + fragmentsVAR
+		  //////////////////////////////////////////////////////////////////
+		  /// CONSTRUCT FINAL ACCESS LIST //
+		  ///////////////////////////////////////////////////////////////
+		  Dim FinalACLString as String
+		  FinalACLString = ACLNumPermitIPProtocol_LEG + SourceAddress_LEG + SourcePort_LEG + DestinationAddress_LEG + DestinationPort_LEG + QOS_LEG + Timerange_LEG + TCP_Options_LEG + fragmentsVAR +icmp_msgtypeVAR + igmp_msgtypeVAR + logVAR + LOG_LEG
+		  
+		  Return FinalACLString
+		  
+		  
+		  
+		  
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mCopyACLtoClipboard()
+		  Dim c As New Clipboard
+		  c.Text = ACL_Configuration_TextArea.Text + EndOfLine + ACL_InterfaceConfig_TextArea.Text + EndOfLine  + _
+		  "!"+EndOfLine + "! ACL configuration generated by the 'Intelligent Subnet Calculator'"
+		  c.Close
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mCreate_ACL_Configuration()
+		  Dim IP_Extended_ACL_Configuration as String
+		  Dim i as Integer
+		  
+		  For i = 0 to UBound(CiscoACLWizardWindow.IPExtendedACL_Storage_Array)
+		    IP_Extended_ACL_Configuration = IP_Extended_ACL_Configuration + fGenerate_ACL_CLI_Configuration(i)+EndOfLine
+		  Next i
+		  
+		  mLoadFinalACLConfig_To_TextAreas(IP_Extended_ACL_Configuration)
+		  mLoadInterfaceApplyConfig_To_TextAreas
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mEnsureVTYLineHigherValues(SelectedNumber as String)
+		  // Convert Incoming Number String into an Integer
+		  Dim SelectedNumberInt as Integer = CDbl(SelectedNumber) + 1
+		  
+		  VTY_LastRange_PopUpMenu.DeleteAllRows
+		  
+		  VTY_LastRange_PopUpMenu.AddRow ""
+		  
+		  Dim VTYInterfaceArray() as String
+		  // Generate Single Interfaces
+		  for i as integer = SelectedNumberInt to 2000
+		    VTYInterfaceArray.Append Str(i)
+		  next i
+		  
+		  for x as integer = 0 to UBound(VTYInterfaceArray)
+		    VTY_LastRange_PopUpMenu.addRow  VTYInterfaceArray(x)
+		  next x
+		  VTY_LastRange_PopUpMenu.ListIndex = 0
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mLoadDefaultInterfaceOptions()
+		  // Initialize First Options for Choice
+		  ChooseIntNumberCombobox.DeleteAllRows
+		  
+		  Dim FirstNum, SecondNum as Integer
+		  Dim DoubleInterfaceNumber() as String
+		  
+		  // Generate Single Interfaces
+		  for i as integer = 0 to 10
+		    DoubleInterfaceNumber.Append Str(i)
+		  next i
+		  
+		  // Generate Double Interfaces ie. 0/0
+		  for i as integer = 0 to 2
+		    FirstNum = i
+		    for y as integer = 0 to 4
+		      SecondNum = y
+		      DoubleInterfaceNumber.Append Str(FirstNum)+"/"+Str(SecondNum)
+		    next y
+		  Next i
+		  
+		  for x as integer = 0 to UBound(DoubleInterfaceNumber)
+		    ChooseIntNumberCombobox.addRow  DoubleInterfaceNumber(x)
+		  next x
+		  
+		  ChooseIntNumberCombobox.ListIndex = 11
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mLoadFinalACLConfig_To_TextAreas(ConfigurationToLoad as string)
+		  Self.ACL_Configuration_TextArea.AppendText "!" + EndOfLine
+		  Self.ACL_Configuration_TextArea.AppendText ConfigurationToLoad
+		  Self.ACL_Configuration_TextArea.AppendText "!"+ EndOfLine
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mLoadInterfaceApplyConfig_To_TextAreas()
+		  Dim DeviceInterface as String  = ChooseIntTypePopupMenu.Text
+		  Dim InterfaceNumber as String = ChooseIntNumberCombobox.Text
+		  Dim StartInterfaceNumber as String = VTY_StartRange_PopUpMenu.Text
+		  Dim LastInterfaceNumber as String = VTY_LastRange_PopUpMenu.Text
+		  Dim ApplyDirection as String = ChooseIntDirectionPopupMenu.Text
+		  Dim ACL_Number as String = CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.CIscoIOS_Extended_ACL_Number.Text
+		  Dim BuildString_Interface, BuildString_ACLGroup as String
+		  Dim BuildVTY_Interface,BuildVTYString_ACLGroup as String
+		  
+		  Self.ACL_InterfaceConfig_TextArea.Text = " "
+		  
+		  // Set Flag for VTY Different Build for Access List Interface Application
+		  if DeviceInterface = "VTY" Then
+		    BuildVTY_Interface =  "!" + EndOfLine + "line vty " + StartInterfaceNumber + " " + LastInterfaceNumber
+		    BuildVTYString_ACLGroup = "access-class" + " " + ACL_Number + " " + ApplyDirection
+		    Self.ACL_InterfaceConfig_TextArea.Text = BuildVTY_Interface + EndOfLine
+		    Self.ACL_InterfaceConfig_TextArea.AppendText " " + BuildVTYString_ACLGroup + EndOfLine + "!" + EndOfLine
+		    
+		  Else
+		    // Regular Interfaces
+		    BuildString_Interface = "!" + EndOfLine +"Interface "+ DeviceInterface + " " + InterfaceNumber
+		    BuildString_ACLGroup = "ip access-group" + " " + ACL_Number + " " + ApplyDirection
+		    Self.ACL_InterfaceConfig_TextArea.Text = BuildString_Interface+EndOfLine
+		    Self.ACL_InterfaceConfig_TextArea.AppendText " " +BuildString_ACLGroup + EndOfLine +"!" + EndOfLine
+		  End if
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mLoadVLANInterfaces()
+		  // Clear it out :)
+		  ChooseIntNumberCombobox.DeleteAllRows
+		  
+		  Dim VLANInterfaceArray() as String
+		  // Generate Single Interfaces
+		  for i as integer = 1 to 1001
+		    VLANInterfaceArray.Append Str(i)
+		  next i
+		  
+		  for x as integer = 0 to UBound(VLANInterfaceArray)
+		    ChooseIntNumberCombobox.addRow  VLANInterfaceArray(x)
+		  next x
+		  ChooseIntNumberCombobox.ListIndex = 0
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mLoadVTYInterfaces(inPopup as PopupMenu, AddBlankStarter as Boolean)
+		  inPopup.DeleteAllRows
+		  
+		  if AddBlankStarter = True Then
+		    inPopup.AddRow ""
+		  End if
+		  
+		  Dim VTYInterfaceArray() as String
+		  // Generate Single Interfaces
+		  for i as integer = 0 to 2000
+		    VTYInterfaceArray.Append Str(i)
+		  next i
+		  
+		  for x as integer = 0 to UBound(VTYInterfaceArray)
+		    inPopup.addRow  VTYInterfaceArray(x)
+		  next x
+		  inPopup.ListIndex = 0
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mLoadVTYPicturelabel()
+		  if VTY_LastRange_PopUpMenu.Text <> "" Then
+		    InterfaceDataLabel.Text = " " + "VTY " + VTY_StartRange_PopUpMenu.Text + " - " + VTY_LastRange_PopUpMenu.Text
+		  Elseif VTY_LastRange_PopUpMenu.Text = "" Then
+		    InterfaceDataLabel.Text = " " + "VTY " + VTY_StartRange_PopUpMenu.Text
+		  End if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mPrintACL()
+		  Dim g As Graphics
+		  Dim LogoPic as New Picture(173,57)
+		  Dim Printdate as new Date
+		  Dim PrintShortDate as String = Printdate.ShortDate
+		  Dim PrintShortTime as String = Printdate.ShortTime
+		  Dim GlobalConfigArray() as String = Split(Trim(ACL_Configuration_TextArea.Text),EndOfLine)
+		  // Create Margins
+		  Dim topMargin as Integer = 10
+		  Dim Footer as integer = 760
+		  Dim leftMargin as Integer = 8
+		  Dim yTracker as Integer
+		  LogoPic = Logosmall
+		  
+		  // Force 96 DPI
+		  app.printerSetup.MaxHorizontalResolution= 96
+		  app.printerSetup.MaxVerticalResolution= 96
+		  
+		  g = OpenPrinterDialog(app.printerSetup,nil)
+		  
+		  if g <> Nil Then
+		    g.DrawPicture(LogoPic,g.Width/2-LogoPic.Width/4,TopMargin,LogoPic.Width/2,LogoPic.Height/2,0,0,LogoPic.Width,LogoPic.Height)
+		    g.TextSize = 11
+		    g.DrawString("IP Extended Access List Configuration",g.Width/2-102,85)
+		    g.DrawString("for Cisco IOS" + Encodings.UTF8.Chr(174) + " and Cisco IOS-XE" + Encodings.UTF8.Chr(174),g.Width/2-95,100) //7
+		    
+		    g.TextSize = 10
+		    g.Underline = True
+		    g.DrawString("Global Configuration",5,140)
+		    g.Underline = False
+		    
+		    for i as integer = 0 to UBound(GlobalConfigArray)
+		      g.DrawString(GlobalConfigArray(i),LeftMargin,158+i*12)
+		      yTracker = 158+i*12
+		    Next i
+		    
+		    g.Underline = True
+		    g.DrawString("Interface Configuration",LeftMargin,yTracker+42)
+		    g.Underline = False
+		    
+		    g.DrawString(ACL_InterfaceConfig_TextArea.Text+EndOfLine,LeftMargin,yTracker+62)
+		    
+		    // Footer
+		    g.TextSize = 7
+		    g.DrawString(PrintShortDate+" - " + PrintShortTime,g.Width-80,footer)
+		    g.DrawString("www.intelligentsubnetcalculator.com",LeftMargin,footer)
+		    g.TextFont = "System"
+		  End if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub mSaveExtendedACL()
+		  Dim file As FolderItem
+		  Dim fileStream As TextOutputStream
+		  Dim MyDate as New Date
+		  Dim TitleName as String = "ExtendedACL_"+Str(MyDate.Hour)+Str(MyDate.Minute)+Str(MyDate.Second)
+		  
+		  file = GetSaveFolderItem("", TitleName+".txt")
+		  If file <> Nil Then
+		    fileStream = TextOutputStream.Create(file)
+		    fileStream.WriteLine("IP Extended Access List Configuration for Cisco IOS" + Encodings.UTF8.Chr(174) + " and Cisco IOS-XE" + Encodings.UTF8.Chr(174))
+		    fileStream.WriteLine(EndOfLine+EndOfLine)
+		    fileStream.WriteLine("Global Configuration")
+		    fileStream.WriteLine("--------------------")
+		    fileStream.WriteLine(ACL_Configuration_TextArea.Text+EndOfLine)
+		    fileStream.WriteLine(EndOfLine)
+		    
+		    fileStream.WriteLine("Interface Configuration")
+		    fileStream.WriteLine("-----------------------")
+		    fileStream.WriteLine(ACL_InterfaceConfig_TextArea.Text+EndOfLine)
+		    fileStream.Close
+		  End If
+		End Sub
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h0
+		InterfaceNumberComboBoxArray() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		Int_ACL_PictureToShow As Picture
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private PrintClicked As Boolean = False
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private SaveClicked As Boolean = False
+	#tag EndProperty
+
+
+#tag EndWindowCode
+
+#tag Events CloseButton
+	#tag Event
+		Sub Action()
+		  CiscoACLWizardWindow.Close
+		  CiscoACLWizardWindow.Hide
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ACL_ApplierHelper_Canvas
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  g.ForeColor = &cFFFFFF
+		  g.FillRect (0,0,me.Width,me.Height)
+		  g.DrawPicture(Int_ACL_PictureToShow,me.Width-Int_ACL_PictureToShow.Width/2-210,Me.Height/2-Int_ACL_PictureToShow.Height/2-18)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ChooseIntTypePopupMenu
+	#tag Event
+		Sub Change()
+		  if Me.text = "VLAN" Then
+		    // Hide VTY Specific Controls
+		    VTYFirstInterfaceNumChooserLabel.Visible = False
+		    VTY_StartRange_PopUpMenu.Enabled = False
+		    VTY_StartRange_PopUpMenu.Visible = False
+		    VTYLastInterfaceNumChooserLabel.Visible = False
+		    VTY_LastRange_PopUpMenu.Enabled = False
+		    VTY_LastRange_PopUpMenu.Visible =False
+		    
+		    // Load Interface Number and InterfaceNumberComboBoxArray
+		    InterfaceNumChooserLabel.Visible = True
+		    ChooseIntNumberCombobox.Visible = True
+		    ChooseIntNumberCombobox.Enabled = True
+		    
+		    // Custom Load Interface Numbers for VLANs
+		    mLoadVLANInterfaces
+		    // Update Label on Picture
+		    InterfaceDataLabel.Text = " " + Me.Text + " " + ChooseIntNumberCombobox.Text
+		    
+		  Elseif Me.Text = "VTY" Then
+		    // Hide Interface Number and InterfaceNumberComboBoxArray
+		    InterfaceNumChooserLabel.Visible = False
+		    ChooseIntNumberCombobox.Visible = False
+		    ChooseIntNumberCombobox.Enabled = False
+		    
+		    // Show VTY Specific Controls
+		    VTYFirstInterfaceNumChooserLabel.Text = "First Line #:"
+		    VTYFirstInterfaceNumChooserLabel.Visible = True
+		    VTY_StartRange_PopUpMenu.Enabled = True
+		    VTY_StartRange_PopUpMenu.Visible = True
+		    
+		    VTYLastInterfaceNumChooserLabel.Text = "Last Line #:"
+		    VTYLastInterfaceNumChooserLabel.Visible = True
+		    VTY_LastRange_PopUpMenu.Enabled = True
+		    VTY_LastRange_PopUpMenu.Visible =True
+		    
+		    // Update Label on Picture
+		    mLoadVTYPicturelabel
+		    
+		  Else
+		    // Hide VTY Specific Controls
+		    VTYFirstInterfaceNumChooserLabel.Visible = False
+		    VTY_StartRange_PopUpMenu.Enabled = False
+		    VTY_StartRange_PopUpMenu.Visible = False
+		    VTYLastInterfaceNumChooserLabel.Visible = False
+		    VTY_LastRange_PopUpMenu.Enabled = False
+		    VTY_LastRange_PopUpMenu.Visible =False
+		    
+		    // LoadInterface Number and InterfaceNumberComboBoxArray
+		    InterfaceNumChooserLabel.Visible = True
+		    ChooseIntNumberCombobox.Visible = True
+		    ChooseIntNumberCombobox.Enabled = True
+		    
+		    mLoadDefaultInterfaceOptions
+		    // Update Label on Picture
+		    InterfaceDataLabel.Text = " " + Me.Text + " " + ChooseIntNumberCombobox.Text
+		  End if
+		  
+		  // Reload everything to TextArea
+		  mLoadInterfaceApplyConfig_To_TextAreas
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  Dim DataPop as String
+		  Dim Last, Counter as Integer
+		  
+		  DataPop = "FastEthernet,Gigabit Ethernet,HSSI,Multilink,Port Channel,POS,Serial,Loopback,Ten Gigabit Ethernet,Tunnel,VLAN,VTY"
+		  Last=CountFields(DataPop,",")
+		  
+		  For Counter=1 to last
+		    me.addRow NthField(DataPop,",",counter)
+		  Next
+		  
+		  me.ListIndex = 0
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ChooseIntDirectionPopupMenu
+	#tag Event
+		Sub Change()
+		  if me.Text = "in" Then
+		    Int_ACL_PictureToShow = ACL_InterfaceFastE_In
+		  Elseif me.Text = "out" Then
+		    Int_ACL_PictureToShow = ACL_InterfaceFastE_Out
+		  End if
+		  
+		  Self.ACL_ApplierHelper_Canvas.Invalidate(False)
+		  
+		  if Me.Text = "in" Then
+		    InterfaceDataLabel.TextColor = RGB(0,153,0)
+		  Elseif Me.Text = "out" Then
+		    InterfaceDataLabel.TextColor = RGB(193,0,0)
+		  End if
+		  
+		  mLoadInterfaceApplyConfig_To_TextAreas
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  Dim DataPop as String
+		  Dim Last, Counter as Integer
+		  
+		  DataPop = "in,out"
+		  Last=CountFields(DataPop,",")
+		  
+		  For Counter=1 to last
+		    me.addRow NthField(DataPop,",",counter)
+		  Next
+		  
+		  me.ListIndex = 0
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events VTY_StartRange_PopUpMenu
+	#tag Event
+		Sub Change()
+		  mLoadInterfaceApplyConfig_To_TextAreas
+		  // We need to ensure that the End Line Number is not Lower than our start number
+		  mEnsureVTYLineHigherValues(me.text)
+		  
+		  If ChooseIntTypePopupMenu.Text = "VTY" Then
+		    // Update Label on Picture
+		    mLoadVTYPicturelabel
+		  Else
+		    InterfaceDataLabel.Text =  " " + ChooseIntTypePopupMenu.Text + " " + ChooseIntNumberCombobox.Text
+		  End if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  mLoadVTYInterfaces(VTY_StartRange_PopUpMenu, False)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events VTY_LastRange_PopUpMenu
+	#tag Event
+		Sub Change()
+		  mLoadInterfaceApplyConfig_To_TextAreas
+		  
+		  If ChooseIntTypePopupMenu.Text = "VTY" Then
+		    // Update Label on Picture
+		    mLoadVTYPicturelabel
+		  Else
+		    InterfaceDataLabel.Text =  " " + ChooseIntTypePopupMenu.Text + " " + ChooseIntNumberCombobox.Text
+		  End if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  mLoadVTYInterfaces(VTY_LastRange_PopUpMenu, True)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events BackButton
+	#tag Event
+		Sub Action()
+		  CiscoACLWizardWindow.Height = 636
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_Extended_ACLConfig1.Visible = False
+		  CiscoACLWizardWindow.CiscoACLWizard_IOS_ExtendedACL1.Visible = True
+		  // Show DropACL Here Canvas
+		  ////CiscoACLWizardWindow.DropACLCanvas.Visible = True
+		  
+		  // Need to clear out Configuration Info so we can remake
+		  Self.ACL_Configuration_TextArea.Text = ""
+		  
+		  // Disable Copy/Configuration Menu Feature
+		  CiscoACLWizardWindow.CopyConfigurations.AutoEnable = False
+		  // Disable Printing
+		  CiscoACLWizardWindow.PrintConfigurations.AutoEnable = False
+		  // Disable Save ACL
+		  CiscoACLWizardWindow.SaveACL.AutoEnable = False
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ChooseIntNumberCombobox
+	#tag Event
+		Sub Open()
+		  mLoadDefaultInterfaceOptions
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Change()
+		  InterfaceDataLabel.Text =  " " + ChooseIntTypePopupMenu.Text + " " + Me.Text
+		  
+		  mLoadInterfaceApplyConfig_To_TextAreas
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  // Asc(13) =  Return :: Asc(9) = Tab
+		  if Asc(Key) = 13 or Asc(Key) = 9 Then
+		    if Me.Text <> "" Then
+		      InterfaceNumberComboBoxArray.Append me.Text
+		    End If
+		  End If
+		  
+		  Self.SetFocus
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events PrintButtonRectangle
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  // Draw Border
+		  g.ForeColor = RGB(120,120,120)
+		  g.PenHeight=1
+		  g.PenWidth=1
+		  g.DrawRect(0,0,me.Width,me.Height)
+		  
+		  if PrintClicked = True Then
+		    // Awesome Gradient Fill
+		    dim i as integer, ratio, endratio as Double
+		    dim StartColor, EndColor as Color
+		    StartColor = RGB(235, 239, 242)
+		    EndColor = RGB(58, 136, 196)
+		    
+		    // Draw The Gradient
+		    for i = G.Height DownTo 0
+		      // Need our ratios of start / end
+		      ratio = (i/g.Height)
+		      endratio = ((g.Height-i)/g.Height)
+		      // Determine the Color
+		      g.ForeColor = RGB(StartColor.Red * endratio + EndColor.Red * ratio, StartColor.Green * endratio + EndColor.Green * ratio, StartColor.Blue * endratio + EndColor.Blue * ratio)
+		      // Draw the current line
+		      g.DrawLine 1, i+1, g.Width-2, i+1
+		    next
+		    
+		  Elseif PrintClicked = False Then
+		    g.ForeColor = RGB(200,200,200)
+		    g.FillRect(1,1,me.Width-2,me.Height-2)
+		    
+		  End if
+		  
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  #IF TargetWin32 Then
+		    me.Visible = False
+		  #ENDIF
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PrintButton
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  //if SaveClicked = True Then
+		  //g.DrawPicture(save16x16inverted,0,0)
+		  //Elseif SaveClicked = False Then
+		  //g.DrawPicture(save16x16,0,0)
+		  //End if
+		  
+		  g.DrawPicture(printer18x18,0,0)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  PrintClicked = False
+		  Invalidate(False)
+		  mPrintACL
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  PrintClicked = True
+		  Invalidate(False)
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  #IF TargetWin32 Then
+		    me.Visible = False
+		  #ENDIF
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SaveButtonRectangle
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  // Draw Border
+		  g.ForeColor = RGB(120,120,120)
+		  g.PenHeight=1
+		  g.PenWidth=1
+		  g.DrawRect(0,0,me.Width,me.Height)
+		  
+		  if SaveClicked = True Then
+		    // Awesome Gradient Fill
+		    dim i as integer, ratio, endratio as Double
+		    dim StartColor, EndColor as Color
+		    StartColor = RGB(235, 239, 242)
+		    EndColor = RGB(58, 136, 196)
+		    
+		    // Draw The Gradient
+		    for i = G.Height DownTo 0
+		      // Need our ratios of start / end
+		      ratio = (i/g.Height)
+		      endratio = ((g.Height-i)/g.Height)
+		      // Determine the Color
+		      g.ForeColor = RGB(StartColor.Red * endratio + EndColor.Red * ratio, StartColor.Green * endratio + EndColor.Green * ratio, StartColor.Blue * endratio + EndColor.Blue * ratio)
+		      // Draw the current line
+		      g.DrawLine 1, i+1, g.Width-2, i+1
+		    next
+		    
+		  Elseif SaveClicked = False Then
+		    g.ForeColor = RGB(200,200,200)
+		    g.FillRect(1,1,me.Width-2,me.Height-2)
+		    
+		  End if
+		  
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  #IF TargetWin32 Then
+		    me.Visible = False
+		  #ENDIF
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SaveButton
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  //if SaveClicked = True Then
+		  //g.DrawPicture(save16x16inverted,0,0)
+		  //Elseif SaveClicked = False Then
+		  //g.DrawPicture(save16x16,0,0)
+		  //End if
+		  
+		  g.DrawPicture(save16x16,0,0)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  SaveClicked = False
+		  Invalidate(False)
+		  mSaveExtendedACL
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  SaveClicked = True
+		  Invalidate(False)
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  #IF TargetWin32 Then
+		    me.Visible = False
+		  #ENDIF
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag ViewBehavior
+	#tag ViewProperty
+		Name="AcceptFocus"
+		Visible=true
+		Group="Behavior"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="AcceptTabs"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="AutoDeactivate"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackColor"
+		Visible=true
+		Group="Appearance"
+		InitialValue="&hFFFFFF"
+		Type="Color"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Backdrop"
+		Visible=true
+		Group="Appearance"
+		Type="Picture"
+		EditorType="Picture"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Enabled"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="EraseBackground"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HasBackColor"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Position"
+		InitialValue="300"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="HelpTag"
+		Visible=true
+		Group="Appearance"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="InitialParent"
+		Group="Position"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Int_ACL_PictureToShow"
+		Group="Behavior"
+		Type="Picture"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Left"
+		Visible=true
+		Group="Position"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockBottom"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockLeft"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockRight"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="LockTop"
+		Visible=true
+		Group="Position"
+		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		Type="String"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="TabIndex"
+		Visible=true
+		Group="Position"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="TabPanelIndex"
+		Group="Position"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="TabStop"
+		Visible=true
+		Group="Position"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Top"
+		Visible=true
+		Group="Position"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Transparent"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="UseFocusRing"
+		Visible=true
+		Group="Appearance"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Visible"
+		Visible=true
+		Group="Appearance"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Position"
+		InitialValue="300"
+		Type="Integer"
+	#tag EndViewProperty
+#tag EndViewBehavior

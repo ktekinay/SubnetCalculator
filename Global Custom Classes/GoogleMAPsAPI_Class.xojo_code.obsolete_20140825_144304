@@ -1,0 +1,90 @@
+#tag Class
+Protected Class GoogleMAPsAPI_Class
+	#tag Method, Flags = &h0
+		Sub FindMe(inLatLong as String)
+		  //?center=36.1824,-79.8067&zoom=14&size=600x600&sensor=false&maptype=roadmap&markers=color:blue%7Clabel:I%7C36.1824,-79.8067
+		  
+		  Dim BuildURL as String = _
+		  MapAPI_BaseURL+MapPosition+inLatLong+"&"+Zoom+"&"+MapSize+"&"+Sensor +"&"+MapType+"&"+MarkerColor+MarkerLabel+inLatLong
+		  dim a as string
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub LaunchMapWindow()
+		  
+		End Sub
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h21
+		Private MapAPI_BaseURL As String = "http://maps.googleapis.com/maps/api/staticmap"
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private MapPosition As String = "?center="
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private MapSize As String = "size=600x600"
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private MapType As String = "maptype=roadmap"
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private MarkerColor As String = "markers=color:red"
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private MarkerLabel As String = "%7Clabel:I%7C"
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private Sensor As String = "sensor=false"
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private Zoom As String = "zoom=14"
+	#tag EndProperty
+
+
+	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Left"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Top"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+	#tag EndViewBehavior
+End Class
+#tag EndClass
