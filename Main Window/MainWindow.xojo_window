@@ -48,7 +48,6 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   26
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   ""
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -94,7 +93,6 @@ Begin Window MainWindow
       HasBackColor    =   False
       Height          =   148
       HelpTag         =   ""
-      Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
       LockBottom      =   False
@@ -135,8 +133,7 @@ Begin Window MainWindow
       End
    End
    Begin Timer LazyLoadTimer
-      Enabled         =   True
-      Height          =   "32"
+      Height          =   32
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -146,8 +143,7 @@ Begin Window MainWindow
       Scope           =   0
       TabPanelIndex   =   0
       Top             =   0
-      Visible         =   True
-      Width           =   "32"
+      Width           =   32
    End
    Begin Listbox SubnetRangeListbox
       AutoDeactivate  =   True
