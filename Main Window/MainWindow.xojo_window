@@ -951,11 +951,13 @@ End
 	#tag EndEvent
 	#tag Event
 		Function MouseWheel(X As Integer, Y As Integer, deltaX as Integer, deltaY as Integer) As Boolean
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
+		  
 		  //Return True
 		  // Dont allow scrolling when we only have less than 11 Entries
 		  
@@ -1048,11 +1050,12 @@ End
 #tag Events LazyLoadScrollBar
 	#tag Event
 		Sub ValueChanged()
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
 		  
 		  // This aligns the scrollbar perfectly on the UBound Boundary
 		  Dim NumberOfCells  as Integer = 6
