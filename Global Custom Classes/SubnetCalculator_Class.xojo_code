@@ -333,24 +333,9 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub GetSingleRange(NetworkIP as string, SubnetMask as String, Optional ViewMode as String)
-		  // Break Down Start IP into Separate Octets in Decimal Form
-		  StartIP_1Dec = CDbl(NetworkIP.NthField(".",1))
-		  StartIP_2Dec = CDbl(NetworkIP.NthField(".",2))
-		  StartIP_3Dec = CDbl(NetworkIP.NthField(".",3))
-		  StartIP_4Dec = CDbl(NetworkIP.NthField(".",4))
+		  mBreakdownIntoOctets( NetworkIP, SubnetMask )
 		  
-		  // Break Down Subnet Mask into Separate Octets in Decimal Form
-		  SubnetMask1Dec = CDbl(SubnetMask.NthField(".",1))
-		  SubnetMask2Dec = CDbl(SubnetMask.NthField(".",2))
-		  SubnetMask3Dec = CDbl(SubnetMask.NthField(".",3))
-		  SubnetMask4Dec = CDbl(SubnetMask.NthField(".",4))
-		  
-		  // Convert IP Address and Subnet Mask into 32 Bit Decimal Words for easier processing
-		  StartIP_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec)
-		  SubnetMask_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec)
-		  
-		  
-		  //Calulate the Subnet and Host Counts
+		  //Calculate the Subnet and Host Counts
 		  mCalculateNumberOfSubnets
 		  mCalculateNumberOfAvailableHosts
 		  
@@ -377,24 +362,9 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub GetSubnetRanges(NetworkIP as string, SubnetMask as String, Optional ViewMode as String)
-		  // Break Down Start IP into Separate Octets in Decimal Form
-		  StartIP_1Dec = CDbl(NetworkIP.NthField(".",1))
-		  StartIP_2Dec = CDbl(NetworkIP.NthField(".",2))
-		  StartIP_3Dec = CDbl(NetworkIP.NthField(".",3))
-		  StartIP_4Dec = CDbl(NetworkIP.NthField(".",4))
+		  mBreakdownIntoOctets( NetworkIP, SubnetMask )
 		  
-		  // Break Down Subnet Mask into Separate Octets in Decimal Form
-		  SubnetMask1Dec = CDbl(SubnetMask.NthField(".",1))
-		  SubnetMask2Dec = CDbl(SubnetMask.NthField(".",2))
-		  SubnetMask3Dec = CDbl(SubnetMask.NthField(".",3))
-		  SubnetMask4Dec = CDbl(SubnetMask.NthField(".",4))
-		  
-		  // Convert IP Address and Subnet Mask into 32 Bit Decimal Words for easier processing
-		  StartIP_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec)
-		  SubnetMask_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec)
-		  
-		  
-		  //Calulate the Subnet and Host Counts
+		  //Calculate the Subnet and Host Counts
 		  mCalculateNumberOfSubnets
 		  mCalculateNumberOfAvailableHosts
 		  
@@ -420,10 +390,30 @@ Protected Class SubnetCalculator_Class
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Sub mCalculateClassFullPrefix()
+		Private Sub mBreakdownIntoOctets(value As String, ByRef field1 As Integer, ByRef field2 As Integer, ByRef field3 As Integer, ByRef field4 As Integer)
+		  dim parts() as string = value.Split( "." )
 		  
+		  // Break Down into Separate Octets in Decimal Form
+		  field1 = CDbl( parts( 0 ) )
+		  field2 = CDbl( parts( 1 ) )
+		  field3 = CDbl( parts( 2 ) )
+		  field4 = CDbl( parts( 3 ) )
 		  
-		  if StartIP_32BitDecimalWord >= 16777216 AND StartIP_32BitDecimalWord <= 2130706431 Then
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mBreakdownIntoOctets(networkIP As String, subnetMask As String)
+		  // Break Down Start IP into Separate Octets in Decimal Form
+		  mBreakdownIntoOctets( networkIP, StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec )
+		  
+		  // Break Down Subnet Mask into Separate Octets in Decimal Form
+		  mBreakdownIntoOctets( subnetMask, SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec )
+		  
+		  // Convert IP Address and Subnet Mask into 32 Bit Decimal Words for easier processing
+		  StartIP_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec)
+		  SubnetMask_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec)
+		  
 		End Sub
 	#tag EndMethod
 
