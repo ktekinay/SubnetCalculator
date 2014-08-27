@@ -1,4 +1,4 @@
-Subnet Calculator Class for Xojo
+IPv4 Subnet Calculator Class for Xojo
 ===================================
 
 
