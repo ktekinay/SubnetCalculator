@@ -165,6 +165,12 @@ Protected Class SubnetCalculator_Class
 		Function fConvert_32BitDecimalTo8Bit_IP(Inbound_32BitWordDecimal as UInt32) As String
 		  // Convert 32 bit decimal base10 back to IP Address 8 bit Decimal
 		  
+		  static mbAccessCS as new CriticalSection
+		  
+		  while not mbAccessCS.TryEnter
+		    App.YieldToNextThread
+		  wend
+		  
 		  static mb as new MemoryBlock( 4 )
 		  mb.LittleEndian = false
 		  
@@ -173,6 +179,8 @@ Protected Class SubnetCalculator_Class
 		  dim Octet2 as integer = mb.Byte( 1 )
 		  dim Octet3 as integer = mb.Byte( 2 )
 		  dim Octet4 as integer = mb.Byte( 3 )
+		  
+		  mbAccessCS.Leave
 		  
 		  Dim DecimalAddressParts(), DecimalAddress As String
 		  
@@ -242,11 +250,12 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h21
 		Private Sub fGetSingleRanges(Input_StartIP_32BitDecimalWord as UInt32, Input_SubnetMask_32BitDecimalWord as uInt32)
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
 		  
 		  Dim BroadcastID_32BitDecimalWord,NetworkSubnetID as UInt32
 		  Dim HostFirst_32BitDecimalWord, HostLast_32BitDecimalWord as UInt32
@@ -274,15 +283,17 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub fGetSubnetRanges(optional Input_StartIP_32BitDecimalWord as UInt32, optional Input_SubnetMask_32BitDecimalWord as uInt32)
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
 		  
 		  mCalculateClassFullPrefix
 		  
 		  if MainWindow.Calc_AllRanges1.User_UseSingleRangeOnly = False Then
+		    KillCreateArrayThread()
 		    
 		    NetworkSubnetID = fGetClassFullNetwork(Input_StartIP_32BitDecimalWord,Input_SubnetMask_32BitDecimalWord)
 		    Redim Array_RangeInfo(Subnets-1,3)
@@ -290,6 +301,18 @@ Protected Class SubnetCalculator_Class
 		    CreateArrayThread = New CreateArray_Thread
 		    CreateArrayThread.Priority = Thread.HighPriority
 		    CreateArrayThread.Run
+		    
+		    '#if DebugBuild
+		    'dim sw as new Stopwatch_MTC
+		    'sw.Start
+		    '#endif
+		    '
+		    'MainWindow.CreateArray()
+		    '
+		    '#if DebugBuild
+		    'sw.Stop
+		    'sw = sw // A place to break
+		    '#endif
 		    
 		    //Preload 40 Lines into Listbox
 		    if Subnets <= 200 Then
@@ -385,6 +408,18 @@ Protected Class SubnetCalculator_Class
 		  
 		  
 		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub KillCreateArrayThread()
+		  if CreateArrayThread <> nil and CreateArrayThread.State <> Thread.NotRunning then
+		    CreateArrayThread.Kill
+		    while CreateArrayThread.State <> Thread.NotRunning
+		      App.YieldToNextThread
+		    wend
+		  end if
 		  
 		End Sub
 	#tag EndMethod
@@ -513,11 +548,12 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub mLoadListbox(optional NumberOfLines as Integer)
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
 		  
 		  if MainWindow.Calc_AllRanges1.User_UseSingleRangeOnly = False Then
 		    Dim i as Integer
