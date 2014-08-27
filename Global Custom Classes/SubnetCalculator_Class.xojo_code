@@ -490,6 +490,9 @@ Protected Class SubnetCalculator_Class
 		Private Sub mGetClassOnly(Input_StartIP_32BitDecimalWord as UInt32, Input_SubnetMask_32BitDecimalWord as uInt32)
 		  // Get the ClassFull Network Based on the Network ID Passed In - Not Comparing it to the Subnet Mask
 		  if Input_StartIP_32BitDecimalWord >= 16777216 AND Input_StartIP_32BitDecimalWord <= 2130706431 Then
+		  
+		  #pragma unused Input_SubnetMask_32BitDecimalWord
+		  #pragma warning "Should that param be removed?"
 		    // Class A 1 - 126
 		    // Compare our Network Against 255.0.0.0
 		    IANA_Class = "Class A"
