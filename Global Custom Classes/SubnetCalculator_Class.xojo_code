@@ -280,10 +280,7 @@ Protected Class SubnetCalculator_Class
 		  #pragma StackOverflowChecking false
 		  #pragma DisableBackgroundTasks
 		  
-		  Dim y, i as Integer
 		  mCalculateClassFullPrefix
-		  
-		  Dim NetworkID_Dec, FirstIP_Dec, LastIP_Dec, Bcast_Dec as String
 		  
 		  if MainWindow.Calc_AllRanges1.User_UseSingleRangeOnly = False Then
 		    
