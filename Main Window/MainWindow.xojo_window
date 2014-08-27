@@ -48,7 +48,6 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   26
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   ""
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -94,7 +93,6 @@ Begin Window MainWindow
       HasBackColor    =   False
       Height          =   148
       HelpTag         =   ""
-      Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
       LockBottom      =   False
@@ -135,8 +133,7 @@ Begin Window MainWindow
       End
    End
    Begin Timer LazyLoadTimer
-      Enabled         =   True
-      Height          =   "32"
+      Height          =   32
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -146,8 +143,7 @@ Begin Window MainWindow
       Scope           =   0
       TabPanelIndex   =   0
       Top             =   0
-      Visible         =   True
-      Width           =   "32"
+      Width           =   32
    End
    Begin Listbox SubnetRangeListbox
       AutoDeactivate  =   True
@@ -290,6 +286,49 @@ End
 		  End if
 		  ConstructContextualReturnFlag = True
 		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub CreateArray()
+		  if Calc_AllRanges1.User_UseSingleRangeOnly = False Then
+		    
+		    dim rangeInfoArray(-1, -1) as UInt32 = SubnetCalculatorSubClass1.Array_RangeInfo
+		    dim decRangeInfoArray(-1, -1) as string = SubnetCalculatorSubClass1.Array_DecRangeInfo
+		    
+		    Dim y as Integer
+		    Dim NetworkID, FirstIP,LastIP,BroadCastIP as String
+		    dim lastSubnetIndex as integer = SubnetCalculatorSubClass1.Subnets - 1
+		    for y = 0 to lastSubnetIndex
+		      
+		      // Network Subnet
+		      rangeInfoArray(y,0) = SubnetCalculatorSubClass1.NetworkSubnetID
+		      decRangeInfoArray(y,0) =  SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,0))
+		      
+		      // First Host IP
+		      SubnetCalculatorSubClass1.HostFirst_32BitDecimalWord = SubnetCalculatorSubClass1.NetworkSubnetID+1
+		      rangeInfoArray(y,1) =SubnetCalculatorSubClass1.HostFirst_32BitDecimalWord
+		      decRangeInfoArray(y,1) =SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,1))
+		      
+		      // Reverse Mask
+		      SubnetCalculatorSubClass1.ReverseSubnetMask = Bitwise.OnesComplement(SubnetCalculatorSubClass1.SubnetMask_32BitDecimalWord)
+		      SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord = SubnetCalculatorSubClass1.NetworkSubnetID+SubnetCalculatorSubClass1.ReverseSubnetMask
+		      
+		      // BroadCast IP
+		      rangeInfoArray(y,3) = SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord
+		      SubnetCalculatorSubClass1.HostLast_32BitDecimalWord  = SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord-1
+		      decRangeInfoArray(y,3) =SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,3))
+		      
+		      // Last Host IP
+		      rangeInfoArray(y,2) =SubnetCalculatorSubClass1.HostLast_32BitDecimalWord
+		      decRangeInfoArray(y,2) = SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,2))
+		      
+		      // Increment
+		      SubnetCalculatorSubClass1.NetworkSubnetID = SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord+1
+		      
+		    Next y
+		    
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -908,11 +947,13 @@ End
 	#tag EndEvent
 	#tag Event
 		Function MouseWheel(X As Integer, Y As Integer, deltaX as Integer, deltaY as Integer) As Boolean
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
+		  
 		  //Return True
 		  // Dont allow scrolling when we only have less than 11 Entries
 		  
@@ -1005,11 +1046,12 @@ End
 #tag Events LazyLoadScrollBar
 	#tag Event
 		Sub ValueChanged()
-		  #pragma BackgroundTasks false
-		  #pragma BoundsChecking false
-		  #pragma NilObjectChecking false
-		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  #if not DebugBuild
+		    #pragma BackgroundTasks false
+		    #pragma BoundsChecking false
+		    #pragma NilObjectChecking false
+		    #pragma StackOverflowChecking false
+		  #endif
 		  
 		  // This aligns the scrollbar perfectly on the UBound Boundary
 		  Dim NumberOfCells  as Integer = 6

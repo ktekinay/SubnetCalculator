@@ -827,11 +827,7 @@ End
 		    // Perform actions in case this is a Second+ Run
 		    MainWindow.LazyLoadScrollBar.Visible =False
 		    MainWindow.LazyLoadTimer.Mode = Timer.ModeOff
-		    if MainWindow.SubnetCalculatorSubClass1.CreateArrayThread <> Nil Then
-		      if MainWindow.SubnetCalculatorSubClass1.CreateArrayThread.State = Thread.Running  Then
-		        MainWindow.SubnetCalculatorSubClass1.CreateArrayThread.Kill
-		      End if
-		    end if
+		    MainWindow.SubnetCalculatorSubClass1.KillCreateArrayThread()
 		    
 		    mSubmitValidation
 		    // Set Lazy Load Scroll Bar Options
@@ -1126,11 +1122,7 @@ End
 		  // Perform actions in case this is a Second+ Run
 		  MainWindow.LazyLoadScrollBar.Visible =False
 		  MainWindow.LazyLoadTimer.Mode = Timer.ModeOff
-		  if MainWindow.SubnetCalculatorSubClass1.CreateArrayThread <> Nil Then
-		    if MainWindow.SubnetCalculatorSubClass1.CreateArrayThread.State = Thread.Running  Then
-		      MainWindow.SubnetCalculatorSubClass1.CreateArrayThread.Kill
-		    End if
-		  end if
+		  MainWindow.SubnetCalculatorSubClass1.KillCreateArrayThread()
 		  
 		  mSubmitValidation
 		  // Set Lazy Load Scroll Bar Options
