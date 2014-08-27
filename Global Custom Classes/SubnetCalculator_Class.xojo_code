@@ -205,40 +205,38 @@ Protected Class SubnetCalculator_Class
 		  // Get the ClassFull Network Based on the Network ID Passed In - Not Comparing it to the Subnet Mask
 		  Dim ClassFullNetworkID as UInt32
 		  
-		  if Input_StartIP_32BitDecimalWord >= 16777216 AND Input_StartIP_32BitDecimalWord <= 2130706431 Then
+		  select case Input_StartIP_32BitDecimalWord
+		  case 16777216 to 2130706431
 		    // Class A 1 - 126
 		    // Compare our Network Against 255.0.0.0
 		    IANA_Class = "Class A"
 		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4278190080
 		    Return ClassFullNetworkID
-		  Else
+		    
+		  case 2147483648 to 3221225471
 		    // Class B 128 - 191
-		    if Input_StartIP_32BitDecimalWord >= 2147483648 AND Input_StartIP_32BitDecimalWord <= 3221225471 Then
-		      // Matched B
-		      IANA_Class = "Class B"
-		      ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294901760
-		      Return ClassFullNetworkID
-		    else
-		      // Class C 192-223
-		      If Input_StartIP_32BitDecimalWord >= 3221225472 AND Input_StartIP_32BitDecimalWord <= 3758096383 Then
-		        // Matched C
-		        IANA_Class = "Class C"
-		        ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967040
-		        Return ClassFullNetworkID
-		      Else
-		        // D (Multicast) 224 - 239
-		        If Input_StartIP_32BitDecimalWord >= 3758096384 AND Input_StartIP_32BitDecimalWord <= 4026531839 Then
-		          // Matched D (Multicast)
-		          IANA_Class = "Class D Multicast"
-		          ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967295
-		          Return ClassFullNetworkID
-		        End If
-		      End if
-		      
-		    end if
+		    // Matched B
+		    IANA_Class = "Class B"
+		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294901760
+		    Return ClassFullNetworkID
 		    
+		  case 3221225472 to 3758096383
+		    // Class C 192-223
+		    // Matched C
+		    IANA_Class = "Class C"
+		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967040
+		    Return ClassFullNetworkID
 		    
-		  end if
+		  case 3758096384 to 4026531839
+		    // D (Multicast) 224 - 239
+		    // Matched D (Multicast)
+		    IANA_Class = "Class D Multicast"
+		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967295
+		    Return ClassFullNetworkID
+		    
+		  end select
+		  
+		  
 		End Function
 	#tag EndMethod
 
