@@ -278,12 +278,6 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub ConstructContextMenu(Base as MenuItem)
-		  if SubnetRangeListbox.ListIndex <> -1 Then
-		    base.append(New MenuItem(Strings_Module.kMainWindow_Contextual_ViewBinary))
-		    base.append(New MenuItem(Strings_Module.kMainWindow_Contextual_WHOIS))
-		    base.append(New MenuItem(MenuItem.TextSeparator))
-		    base.append(New MenuItem(Strings_Module.kMainWindow_Contextual_Copy))
-		  End if
 		  ConstructContextualReturnFlag = True
 		  
 		End Sub
