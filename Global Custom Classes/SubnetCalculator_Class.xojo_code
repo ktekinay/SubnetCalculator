@@ -164,23 +164,17 @@ Protected Class SubnetCalculator_Class
 	#tag Method, Flags = &h0
 		Function fConvert_32BitDecimalTo8Bit_IP(Inbound_32BitWordDecimal as UInt32) As String
 		  // Convert 32 bit decimal base10 back to IP Address 8 bit Decimal
-		  Dim Calc1, Octet1, Octet2, Octet3, Octet4, Base10IP As UInt32
-		  Dim DecimalAddressParts(), DecimalAddress As String
-		  Base10IP = Inbound_32BitWordDecimal
 		  
-		  For i As Integer = 0 To 3
-		    Calc1 = Base10IP / 256^(3-i)
-		    Base10IP = Base10IP - Calc1*(256^(3-i))
-		    if i = 0 Then
-		      Octet1 = Calc1
-		    Elseif i = 1 Then
-		      Octet2 = Calc1
-		    Elseif i = 2 Then
-		      Octet3 = Calc1
-		    Elseif i = 3 Then
-		      Octet4 = Calc1
-		    End if
-		  Next i
+		  static mb as new MemoryBlock( 4 )
+		  mb.LittleEndian = false
+		  
+		  mb.UInt32Value( 0 ) = Inbound_32BitWordDecimal
+		  dim Octet1 as integer = mb.Byte( 0 )
+		  dim Octet2 as integer = mb.Byte( 1 )
+		  dim Octet3 as integer = mb.Byte( 2 )
+		  dim Octet4 as integer = mb.Byte( 3 )
+		  
+		  Dim DecimalAddressParts(), DecimalAddress As String
 		  
 		  DecimalAddressParts=Array(Str(Octet1),Str(Octet2),Str(Octet3), Str(Octet4))
 		  DecimalAddress=Join(DecimalAddressParts,".")
