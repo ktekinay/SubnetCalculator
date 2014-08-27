@@ -164,23 +164,17 @@ Protected Class SubnetCalculator_Class
 	#tag Method, Flags = &h0
 		Function fConvert_32BitDecimalTo8Bit_IP(Inbound_32BitWordDecimal as UInt32) As String
 		  // Convert 32 bit decimal base10 back to IP Address 8 bit Decimal
-		  Dim Calc1, Octet1, Octet2, Octet3, Octet4, Base10IP As UInt32
-		  Dim DecimalAddressParts(), DecimalAddress As String
-		  Base10IP = Inbound_32BitWordDecimal
 		  
-		  For i As Integer = 0 To 3
-		    Calc1 = Base10IP / 256^(3-i)
-		    Base10IP = Base10IP - Calc1*(256^(3-i))
-		    if i = 0 Then
-		      Octet1 = Calc1
-		    Elseif i = 1 Then
-		      Octet2 = Calc1
-		    Elseif i = 2 Then
-		      Octet3 = Calc1
-		    Elseif i = 3 Then
-		      Octet4 = Calc1
-		    End if
-		  Next i
+		  static mb as new MemoryBlock( 4 )
+		  mb.LittleEndian = false
+		  
+		  mb.UInt32Value( 0 ) = Inbound_32BitWordDecimal
+		  dim Octet1 as integer = mb.Byte( 0 )
+		  dim Octet2 as integer = mb.Byte( 1 )
+		  dim Octet3 as integer = mb.Byte( 2 )
+		  dim Octet4 as integer = mb.Byte( 3 )
+		  
+		  Dim DecimalAddressParts(), DecimalAddress As String
 		  
 		  DecimalAddressParts=Array(Str(Octet1),Str(Octet2),Str(Octet3), Str(Octet4))
 		  DecimalAddress=Join(DecimalAddressParts,".")
@@ -211,40 +205,38 @@ Protected Class SubnetCalculator_Class
 		  // Get the ClassFull Network Based on the Network ID Passed In - Not Comparing it to the Subnet Mask
 		  Dim ClassFullNetworkID as UInt32
 		  
-		  if Input_StartIP_32BitDecimalWord >= 16777216 AND Input_StartIP_32BitDecimalWord <= 2130706431 Then
+		  select case Input_StartIP_32BitDecimalWord
+		  case 16777216 to 2130706431
 		    // Class A 1 - 126
 		    // Compare our Network Against 255.0.0.0
 		    IANA_Class = "Class A"
 		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4278190080
 		    Return ClassFullNetworkID
-		  Else
+		    
+		  case 2147483648 to 3221225471
 		    // Class B 128 - 191
-		    if Input_StartIP_32BitDecimalWord >= 2147483648 AND Input_StartIP_32BitDecimalWord <= 3221225471 Then
-		      // Matched B
-		      IANA_Class = "Class B"
-		      ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294901760
-		      Return ClassFullNetworkID
-		    else
-		      // Class C 192-223
-		      If Input_StartIP_32BitDecimalWord >= 3221225472 AND Input_StartIP_32BitDecimalWord <= 3758096383 Then
-		        // Matched C
-		        IANA_Class = "Class C"
-		        ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967040
-		        Return ClassFullNetworkID
-		      Else
-		        // D (Multicast) 224 - 239
-		        If Input_StartIP_32BitDecimalWord >= 3758096384 AND Input_StartIP_32BitDecimalWord <= 4026531839 Then
-		          // Matched D (Multicast)
-		          IANA_Class = "Class D Multicast"
-		          ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967295
-		          Return ClassFullNetworkID
-		        End If
-		      End if
-		      
-		    end if
+		    // Matched B
+		    IANA_Class = "Class B"
+		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294901760
+		    Return ClassFullNetworkID
 		    
+		  case 3221225472 to 3758096383
+		    // Class C 192-223
+		    // Matched C
+		    IANA_Class = "Class C"
+		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967040
+		    Return ClassFullNetworkID
 		    
-		  end if
+		  case 3758096384 to 4026531839
+		    // D (Multicast) 224 - 239
+		    // Matched D (Multicast)
+		    IANA_Class = "Class D Multicast"
+		    ClassFullNetworkID =  Input_StartIP_32BitDecimalWord AND 4294967295
+		    Return ClassFullNetworkID
+		    
+		  end select
+		  
+		  
 		End Function
 	#tag EndMethod
 
@@ -288,10 +280,7 @@ Protected Class SubnetCalculator_Class
 		  #pragma StackOverflowChecking false
 		  #pragma DisableBackgroundTasks
 		  
-		  Dim y, i as Integer
 		  mCalculateClassFullPrefix
-		  
-		  Dim NetworkID_Dec, FirstIP_Dec, LastIP_Dec, Bcast_Dec as String
 		  
 		  if MainWindow.Calc_AllRanges1.User_UseSingleRangeOnly = False Then
 		    
@@ -344,24 +333,9 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub GetSingleRange(NetworkIP as string, SubnetMask as String, Optional ViewMode as String)
-		  // Break Down Start IP into Separate Octets in Decimal Form
-		  StartIP_1Dec = CDbl(NetworkIP.NthField(".",1))
-		  StartIP_2Dec = CDbl(NetworkIP.NthField(".",2))
-		  StartIP_3Dec = CDbl(NetworkIP.NthField(".",3))
-		  StartIP_4Dec = CDbl(NetworkIP.NthField(".",4))
+		  mBreakdownIntoOctets( NetworkIP, SubnetMask )
 		  
-		  // Break Down Subnet Mask into Separate Octets in Decimal Form
-		  SubnetMask1Dec = CDbl(SubnetMask.NthField(".",1))
-		  SubnetMask2Dec = CDbl(SubnetMask.NthField(".",2))
-		  SubnetMask3Dec = CDbl(SubnetMask.NthField(".",3))
-		  SubnetMask4Dec = CDbl(SubnetMask.NthField(".",4))
-		  
-		  // Convert IP Address and Subnet Mask into 32 Bit Decimal Words for easier processing
-		  StartIP_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec)
-		  SubnetMask_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec)
-		  
-		  
-		  //Calulate the Subnet and Host Counts
+		  //Calculate the Subnet and Host Counts
 		  mCalculateNumberOfSubnets
 		  mCalculateNumberOfAvailableHosts
 		  
@@ -388,24 +362,9 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub GetSubnetRanges(NetworkIP as string, SubnetMask as String, Optional ViewMode as String)
-		  // Break Down Start IP into Separate Octets in Decimal Form
-		  StartIP_1Dec = CDbl(NetworkIP.NthField(".",1))
-		  StartIP_2Dec = CDbl(NetworkIP.NthField(".",2))
-		  StartIP_3Dec = CDbl(NetworkIP.NthField(".",3))
-		  StartIP_4Dec = CDbl(NetworkIP.NthField(".",4))
+		  mBreakdownIntoOctets( NetworkIP, SubnetMask )
 		  
-		  // Break Down Subnet Mask into Separate Octets in Decimal Form
-		  SubnetMask1Dec = CDbl(SubnetMask.NthField(".",1))
-		  SubnetMask2Dec = CDbl(SubnetMask.NthField(".",2))
-		  SubnetMask3Dec = CDbl(SubnetMask.NthField(".",3))
-		  SubnetMask4Dec = CDbl(SubnetMask.NthField(".",4))
-		  
-		  // Convert IP Address and Subnet Mask into 32 Bit Decimal Words for easier processing
-		  StartIP_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec)
-		  SubnetMask_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec)
-		  
-		  
-		  //Calulate the Subnet and Host Counts
+		  //Calculate the Subnet and Host Counts
 		  mCalculateNumberOfSubnets
 		  mCalculateNumberOfAvailableHosts
 		  
@@ -431,37 +390,58 @@ Protected Class SubnetCalculator_Class
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
+		Private Sub mBreakdownIntoOctets(value As String, ByRef field1 As Integer, ByRef field2 As Integer, ByRef field3 As Integer, ByRef field4 As Integer)
+		  dim parts() as string = value.Split( "." )
+		  
+		  // Break Down into Separate Octets in Decimal Form
+		  field1 = CDbl( parts( 0 ) )
+		  field2 = CDbl( parts( 1 ) )
+		  field3 = CDbl( parts( 2 ) )
+		  field4 = CDbl( parts( 3 ) )
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mBreakdownIntoOctets(networkIP As String, subnetMask As String)
+		  // Break Down Start IP into Separate Octets in Decimal Form
+		  mBreakdownIntoOctets( networkIP, StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec )
+		  
+		  // Break Down Subnet Mask into Separate Octets in Decimal Form
+		  mBreakdownIntoOctets( subnetMask, SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec )
+		  
+		  // Convert IP Address and Subnet Mask into 32 Bit Decimal Words for easier processing
+		  StartIP_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(StartIP_1Dec, StartIP_2Dec, StartIP_3Dec, StartIP_4Dec)
+		  SubnetMask_32BitDecimalWord = fConvert_8BitDecimalTo32BitDecimal(SubnetMask1Dec, SubnetMask2Dec, SubnetMask3Dec, SubnetMask4Dec)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
 		Private Sub mCalculateClassFullPrefix()
-		  
-		  
-		  if StartIP_32BitDecimalWord >= 16777216 AND StartIP_32BitDecimalWord <= 2130706431 Then
+		  select case StartIP_32BitDecimalWord
+		  case 16777216 to 2130706431
 		    // Class A 1 - 126
 		    // Compare our Network Against 255.0.0.0
 		    ClassFullSubnetPrefix = 8
-		  Else
+		    
+		  case 2147483648 to 3221225471
 		    // Class B 128 - 191
-		    if StartIP_32BitDecimalWord >= 2147483648 AND StartIP_32BitDecimalWord <= 3221225471 Then
-		      // Matched B
-		      ClassFullSubnetPrefix = 16
-		    else
-		      // Class C 192-223
-		      If StartIP_32BitDecimalWord >= 3221225472 AND StartIP_32BitDecimalWord <= 3758096383 Then
-		        // Matched C
-		        ClassFullSubnetPrefix = 24
-		      Else
-		        // D (Multicast) 224 - 239
-		        If StartIP_32BitDecimalWord >= 3758096384 AND StartIP_32BitDecimalWord <= 4026531839 Then
-		          // Matched D (Multicast)
-		          ClassFullSubnetPrefix = 32
-		        End If
-		        
-		        
-		      End if
-		      
-		    end if
+		    // Matched B
+		    ClassFullSubnetPrefix = 16
 		    
+		  case 3221225472 to 3758096383
+		    // Class C 192-223
+		    // Matched C
+		    ClassFullSubnetPrefix = 24
 		    
-		  end if
+		  case 3758096384 to 4026531839
+		    // D (Multicast) 224 - 239
+		    // Matched D (Multicast)
+		    ClassFullSubnetPrefix = 32
+		    
+		  end select
+		  
 		End Sub
 	#tag EndMethod
 
@@ -500,34 +480,34 @@ Protected Class SubnetCalculator_Class
 	#tag Method, Flags = &h21
 		Private Sub mGetClassOnly(Input_StartIP_32BitDecimalWord as UInt32, Input_SubnetMask_32BitDecimalWord as uInt32)
 		  // Get the ClassFull Network Based on the Network ID Passed In - Not Comparing it to the Subnet Mask
-		  if Input_StartIP_32BitDecimalWord >= 16777216 AND Input_StartIP_32BitDecimalWord <= 2130706431 Then
+		  
+		  #pragma unused Input_SubnetMask_32BitDecimalWord
+		  #pragma warning "Should that param be removed?"
+		  
+		  select case Input_StartIP_32BitDecimalWord
+		  case 16777216 to 2130706431
 		    // Class A 1 - 126
 		    // Compare our Network Against 255.0.0.0
 		    IANA_Class = "Class A"
-		  Else
+		    
+		  case 2147483648 to 3221225471
 		    // Class B 128 - 191
-		    if Input_StartIP_32BitDecimalWord >= 2147483648 AND Input_StartIP_32BitDecimalWord <= 3221225471 Then
-		      // Matched B
-		      IANA_Class = "Class B"
-		    else
-		      // Class C 192-223
-		      If Input_StartIP_32BitDecimalWord >= 3221225472 AND Input_StartIP_32BitDecimalWord <= 3758096383 Then
-		        // Matched C
-		        IANA_Class = "Class C"
-		      Else
-		        // D (Multicast) 224 - 239
-		        If Input_StartIP_32BitDecimalWord >= 3758096384 AND Input_StartIP_32BitDecimalWord <= 4026531839 Then
-		          // Matched D (Multicast)
-		          IANA_Class = "Class D Multicast"
-		        End If
-		        
-		        
-		      End if
-		      
-		    end if
+		    // Matched B
+		    IANA_Class = "Class B"
 		    
+		  case 3221225472 to 3758096383
+		    // Class C 192-223
+		    // Matched C
+		    IANA_Class = "Class C"
 		    
-		  end if
+		  case 3758096384 to 4026531839
+		    // D (Multicast) 224 - 239
+		    // Matched D (Multicast)
+		    IANA_Class = "Class D Multicast"
+		    
+		  end select
+		  
+		  
 		End Sub
 	#tag EndMethod
 
