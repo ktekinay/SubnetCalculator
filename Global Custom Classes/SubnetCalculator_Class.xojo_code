@@ -412,6 +412,18 @@ Protected Class SubnetCalculator_Class
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub KillCreateArrayThread()
+		  if CreateArrayThread <> nil and CreateArrayThread.State <> Thread.NotRunning then
+		    CreateArrayThread.Kill
+		    while CreateArrayThread.State <> Thread.NotRunning
+		      App.YieldToNextThread
+		    wend
+		  end if
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h21
 		Private Sub mBreakdownIntoOctets(value As String, ByRef field1 As Integer, ByRef field2 As Integer, ByRef field3 As Integer, ByRef field4 As Integer)
 		  dim parts() as string = value.Split( "." )
