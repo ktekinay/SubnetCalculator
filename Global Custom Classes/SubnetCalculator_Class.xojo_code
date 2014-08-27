@@ -424,33 +424,34 @@ Protected Class SubnetCalculator_Class
 		  
 		  
 		  if StartIP_32BitDecimalWord >= 16777216 AND StartIP_32BitDecimalWord <= 2130706431 Then
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub mCalculateClassFullPrefix()
+		  select case StartIP_32BitDecimalWord
+		  case 16777216 to 2130706431
 		    // Class A 1 - 126
 		    // Compare our Network Against 255.0.0.0
 		    ClassFullSubnetPrefix = 8
-		  Else
+		    
+		  case 2147483648 to 3221225471
 		    // Class B 128 - 191
-		    if StartIP_32BitDecimalWord >= 2147483648 AND StartIP_32BitDecimalWord <= 3221225471 Then
-		      // Matched B
-		      ClassFullSubnetPrefix = 16
-		    else
-		      // Class C 192-223
-		      If StartIP_32BitDecimalWord >= 3221225472 AND StartIP_32BitDecimalWord <= 3758096383 Then
-		        // Matched C
-		        ClassFullSubnetPrefix = 24
-		      Else
-		        // D (Multicast) 224 - 239
-		        If StartIP_32BitDecimalWord >= 3758096384 AND StartIP_32BitDecimalWord <= 4026531839 Then
-		          // Matched D (Multicast)
-		          ClassFullSubnetPrefix = 32
-		        End If
-		        
-		        
-		      End if
-		      
-		    end if
+		    // Matched B
+		    ClassFullSubnetPrefix = 16
 		    
+		  case 3221225472 to 3758096383
+		    // Class C 192-223
+		    // Matched C
+		    ClassFullSubnetPrefix = 24
 		    
-		  end if
+		  case 3758096384 to 4026531839
+		    // D (Multicast) 224 - 239
+		    // Matched D (Multicast)
+		    ClassFullSubnetPrefix = 32
+		    
+		  end select
+		  
 		End Sub
 	#tag EndMethod
 
