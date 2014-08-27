@@ -6,6 +6,7 @@ Module=Strings_Module;Strings_Module.xojo_code;&h2ADB196A;&h0;false
 Class=App;App.xojo_code;&h6F63143B;&h0;false
 Folder=Main Window;Main Window;&h3B0E8529;&h0;false
 Folder=Global Custom Classes;Global Custom Classes;&h4B688863;&h0;false
+Class=Stopwatch_MTC;Stopwatch_MTC.xojo_code;&h34CE49A5;&h0;false
 Class=SubnetCalculator_Class;Global Custom Classes/SubnetCalculator_Class.xojo_code;&h2754438A;&h4B688863;false
 Window=MainWindow;Main Window/MainWindow.xojo_window;&h51C5A844;&h3B0E8529;false
 BuildSteps=Build Automation;Build Automation.xojo_code;&h66E8A54;&h0;false
