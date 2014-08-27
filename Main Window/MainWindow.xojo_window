@@ -293,6 +293,49 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub CreateArray()
+		  if Calc_AllRanges1.User_UseSingleRangeOnly = False Then
+		    
+		    dim rangeInfoArray(-1, -1) as UInt32 = SubnetCalculatorSubClass1.Array_RangeInfo
+		    dim decRangeInfoArray(-1, -1) as string = SubnetCalculatorSubClass1.Array_DecRangeInfo
+		    
+		    Dim y as Integer
+		    Dim NetworkID, FirstIP,LastIP,BroadCastIP as String
+		    dim lastSubnetIndex as integer = SubnetCalculatorSubClass1.Subnets - 1
+		    for y = 0 to lastSubnetIndex
+		      
+		      // Network Subnet
+		      rangeInfoArray(y,0) = SubnetCalculatorSubClass1.NetworkSubnetID
+		      decRangeInfoArray(y,0) =  SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,0))
+		      
+		      // First Host IP
+		      SubnetCalculatorSubClass1.HostFirst_32BitDecimalWord = SubnetCalculatorSubClass1.NetworkSubnetID+1
+		      rangeInfoArray(y,1) =SubnetCalculatorSubClass1.HostFirst_32BitDecimalWord
+		      decRangeInfoArray(y,1) =SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,1))
+		      
+		      // Reverse Mask
+		      SubnetCalculatorSubClass1.ReverseSubnetMask = Bitwise.OnesComplement(SubnetCalculatorSubClass1.SubnetMask_32BitDecimalWord)
+		      SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord = SubnetCalculatorSubClass1.NetworkSubnetID+SubnetCalculatorSubClass1.ReverseSubnetMask
+		      
+		      // BroadCast IP
+		      rangeInfoArray(y,3) = SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord
+		      SubnetCalculatorSubClass1.HostLast_32BitDecimalWord  = SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord-1
+		      decRangeInfoArray(y,3) =SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,3))
+		      
+		      // Last Host IP
+		      rangeInfoArray(y,2) =SubnetCalculatorSubClass1.HostLast_32BitDecimalWord
+		      decRangeInfoArray(y,2) = SubnetCalculatorSubClass1.fConvert_32BitDecimalTo8Bit_IP(rangeInfoArray(y,2))
+		      
+		      // Increment
+		      SubnetCalculatorSubClass1.NetworkSubnetID = SubnetCalculatorSubClass1.BroadCastID_32BitDecimalWord+1
+		      
+		    Next y
+		    
+		  end if
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h21
 		Private Sub DoContextAction(hititem as MenuItem)
 		  
