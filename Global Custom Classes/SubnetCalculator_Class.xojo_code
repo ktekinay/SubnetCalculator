@@ -242,11 +242,11 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h21
 		Private Sub fGetSingleRanges(Input_StartIP_32BitDecimalWord as UInt32, Input_SubnetMask_32BitDecimalWord as uInt32)
-		  #pragma BackgroundTasks false
+		  //#pragma BackgroundTasks false
 		  #pragma BoundsChecking false
 		  #pragma NilObjectChecking false
 		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  //#pragma DisableBackgroundTasks
 		  
 		  Dim BroadcastID_32BitDecimalWord,NetworkSubnetID as UInt32
 		  Dim HostFirst_32BitDecimalWord, HostLast_32BitDecimalWord as UInt32
@@ -274,11 +274,11 @@ Protected Class SubnetCalculator_Class
 
 	#tag Method, Flags = &h0
 		Sub fGetSubnetRanges(optional Input_StartIP_32BitDecimalWord as UInt32, optional Input_SubnetMask_32BitDecimalWord as uInt32)
-		  #pragma BackgroundTasks false
+		  //#pragma BackgroundTasks false
 		  #pragma BoundsChecking false
 		  #pragma NilObjectChecking false
 		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  //#pragma DisableBackgroundTasks
 		  
 		  mCalculateClassFullPrefix
 		  

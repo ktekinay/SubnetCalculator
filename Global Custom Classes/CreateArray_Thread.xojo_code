@@ -3,11 +3,11 @@ Protected Class CreateArray_Thread
 Inherits Thread
 	#tag Event
 		Sub Run()
-		  #pragma BackgroundTasks false
+		  //#pragma BackgroundTasks false
 		  #pragma BoundsChecking false
 		  #pragma NilObjectChecking false
 		  #pragma StackOverflowChecking false
-		  #pragma DisableBackgroundTasks
+		  //#pragma DisableBackgroundTasks
 		  
 		  if MainWindow.Calc_AllRanges1.User_UseSingleRangeOnly = False Then
 		    
