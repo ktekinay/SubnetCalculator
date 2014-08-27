@@ -23,7 +23,7 @@ Begin Window MainWindow
    MinWidth        =   610
    Placement       =   0
    Resizeable      =   True
-   Title           =   "#Strings_Module.kMainWindowTitle"
+   Title           =   "Xojo Subnet Calculator Project"
    Visible         =   False
    Width           =   610
    Begin Label CurrentDisplayCounts_DataLabel
