@@ -165,6 +165,12 @@ Protected Class SubnetCalculator_Class
 		Function fConvert_32BitDecimalTo8Bit_IP(Inbound_32BitWordDecimal as UInt32) As String
 		  // Convert 32 bit decimal base10 back to IP Address 8 bit Decimal
 		  
+		  static mbAccessCS as new CriticalSection
+		  
+		  while not mbAccessCS.TryEnter
+		    App.YieldToNextThread
+		  wend
+		  
 		  static mb as new MemoryBlock( 4 )
 		  mb.LittleEndian = false
 		  
@@ -173,6 +179,8 @@ Protected Class SubnetCalculator_Class
 		  dim Octet2 as integer = mb.Byte( 1 )
 		  dim Octet3 as integer = mb.Byte( 2 )
 		  dim Octet4 as integer = mb.Byte( 3 )
+		  
+		  mbAccessCS.Leave
 		  
 		  Dim DecimalAddressParts(), DecimalAddress As String
 		  
